@@ -1,0 +1,7 @@
+.git
+.agents
+graphify-out
+.gemini
+*.log
+final_shot_*.png
+shot_*.png

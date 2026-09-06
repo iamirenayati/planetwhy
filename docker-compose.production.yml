@@ -1,0 +1,16 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: planetwhy_web
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8105:80"
+    mem_limit: 128m
+    cpus: "0.50"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

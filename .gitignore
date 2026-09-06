@@ -1,0 +1,28 @@
+﻿# Root test & audit screenshots (keep images/ directory intact)
+/*.png
+/*.jpg
+/*.jpeg
+/*.txt
+/step_267_index.html
+/reconstructed_index.html
+/capture_all_sections.js
+/capture_mobile.js
+
+# Dependencies
+node_modules/
+
+# Logs & Environment
+*.log
+.env
+.env.local
+.env.production
+
+# Local agent caches
+graphify-out/
+.agents/skills/
+
+# OS & Editor artifacts
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

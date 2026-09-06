@@ -1,0 +1,4147 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>پلنت وای | PLANETWHY AI — آکادمی ۳بعدی هوش مصنوعی کودکان و نوجوانان قائم‌شهر</title>
+  <meta name="description" content="آکادمی هوش مصنوعی کودکان و نوجوانان پلنت وای در قائم‌شهر و مازندران | همراه با دنیای ۳بعدی تعاملی" />
+
+  <style>
+    /* ==========================================================================
+       LOCAL TYPOGRAPHY: YEKAN BAKH
+       ========================================================================== */
+    @font-face {
+      font-family: 'YekanBakh';
+      src: url('./fonts/yekanbakhbold.ttf') format('truetype');
+      font-weight: 700;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'YekanBakh';
+      src: url('./fonts/yekanbakhbold2.ttf') format('truetype');
+      font-weight: 800;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'YekanBakh';
+      src: url('./fonts/yekanbakhsemibold.ttf') format('truetype');
+      font-weight: 600;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'YekanBakh';
+      src: url('./fonts/yekanbakhreg.ttf') format('truetype');
+      font-weight: 400;
+      font-display: swap;
+    }
+
+    /* ==========================================================================
+       KARL GONSALVES DESIGN SYSTEM TOKENS
+       ========================================================================== */
+    :root {
+      /* Colors */
+      --color-signal-yellow: #ffe600;
+      --color-globe-azure: #007fff;
+      --color-roof-coral: #ef3b2c;
+      --color-charcoal-ink: #333333;
+      --color-cloud-white: #ffffff;
+
+      /* Radii */
+      --radius-pop: 24px;
+      --radius-pill: 9999px;
+
+      /* Pop-Art Neo-Brutalist Shadows */
+      --pop-shadow-sm: 3px 3px 0px var(--color-charcoal-ink);
+      --pop-shadow-md: 5px 5px 0px var(--color-charcoal-ink);
+      --pop-shadow-lg: 8px 8px 0px var(--color-charcoal-ink);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'YekanBakh', 'Arial', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html, body {
+      overflow-x: clip;
+      max-width: 100%;
+      width: 100%;
+      background-color: var(--color-signal-yellow);
+      color: var(--color-charcoal-ink);
+      line-height: 1.4;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* ==========================================================================
+       AUTHENTIC POP-ART CARTOON CLOUDS & SPARKLE STARS
+       ========================================================================== */
+    @keyframes floatCloudLeft {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(14px, -6px); }
+    }
+    @keyframes floatCloudRight {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(-12px, -5px); }
+    }
+    @keyframes floatCloudSlow {
+      0%, 100% { transform: translate(0, 0); }
+      50% { transform: translate(10px, -8px); }
+    }
+    @keyframes popStarTwinkle {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50% { transform: scale(1.18) rotate(8deg); }
+    }
+    @keyframes bounceGently {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .pop-cloud {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.06));
+    }
+    .pop-cloud-anim-1 {
+      animation: floatCloudLeft 8s ease-in-out infinite;
+    }
+    .pop-cloud-anim-2 {
+      animation: floatCloudRight 9.5s ease-in-out infinite;
+    }
+    .pop-cloud-anim-3 {
+      animation: floatCloudSlow 11s ease-in-out infinite;
+    }
+
+    .pop-star {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      animation: popStarTwinkle 4s ease-in-out infinite;
+    }
+
+    .bounce-anim { animation: bounceGently 4s ease-in-out infinite; }
+
+    @media (max-width: 900px) {
+      .pop-cloud-hide-tablet {
+        display: none !important;
+      }
+    }
+    @media (max-width: 600px) {
+      .pop-cloud {
+        opacity: 0.6;
+        transform: scale(0.75);
+      }
+    }
+
+    /* ==========================================================================
+       RESPONSIVE TOP NAVIGATION (SPACIOUS & CENTERED BRAND)
+       ========================================================================== */
+    header.karl-nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 16px 28px;
+      background: var(--color-signal-yellow);
+      border-bottom: 3.5px solid var(--color-charcoal-ink);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      transition: padding 0.2s ease;
+    }
+
+    .karl-nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 48px;
+      box-sizing: border-box;
+    }
+
+    .nav-side-right {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .brand-group {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--color-charcoal-ink);
+      transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 1;
+    }
+    .brand-group:hover {
+      transform: scale(1.03);
+    }
+
+    .brand-badge {
+      background: var(--color-roof-coral);
+      color: var(--color-cloud-white);
+      font-size: 1.48rem;
+      font-weight: 900;
+      padding: 7px 24px;
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      box-shadow: 4px 4px 0px var(--color-charcoal-ink);
+      transform: rotate(-1.5deg);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+    .brand-group:hover .brand-badge {
+      transform: rotate(0deg) scale(1.03);
+      box-shadow: 5px 5px 0px var(--color-charcoal-ink);
+      background: #f43f5e;
+    }
+
+    .brand-planet-icon {
+      font-size: 1.4rem;
+      display: inline-block;
+      animation: floatBadgePlanet 3s ease-in-out infinite;
+    }
+    @keyframes floatBadgePlanet {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-2px) rotate(8deg); }
+    }
+
+    .brand-name {
+      font-size: 1.38rem;
+      font-weight: 900;
+      letter-spacing: 1.2px;
+      color: var(--color-charcoal-ink);
+      display: inline-block;
+      white-space: nowrap;
+      transition: color 0.15s ease;
+    }
+    .brand-group:hover .brand-name {
+      color: var(--color-globe-azure);
+    }
+
+    .nav-side-left {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .btn-nav-reserve {
+      background: var(--color-cloud-white);
+      color: var(--color-charcoal-ink);
+      border: 2.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 8px 18px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: var(--pop-shadow-sm);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+      font-family: inherit;
+    }
+    .btn-nav-reserve:hover {
+      background: #fef08a;
+      transform: translate(-1px, -1px);
+      box-shadow: var(--pop-shadow-md);
+    }
+
+    .btn-nav-call {
+      background: var(--color-roof-coral);
+      color: var(--color-cloud-white);
+      border: 2.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 8px 18px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: var(--pop-shadow-sm);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .btn-nav-call:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: var(--pop-shadow-md);
+    }
+
+    /* Prevent sticky header from occluding section titles on anchor click */
+    #transform, #science, #exhibits, #instructor, #b2b {
+      scroll-margin-top: 85px;
+    }
+
+    /* ==========================================================================
+       HERO SECTION WITH 3D CANVAS (FLUID & MOBILE-PERFECT)
+       ========================================================================== */
+    section.karl-hero {
+      position: relative;
+      padding-top: 20px;
+      overflow-x: clip;
+      overflow-y: visible;
+      text-align: center;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .hero-container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 16px;
+      position: relative;
+      z-index: 2;
+      box-sizing: border-box;
+    }
+
+    .hero-top-speech-bubble {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-cloud-white);
+      color: var(--color-charcoal-ink);
+      border: 2.5px solid var(--color-charcoal-ink);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: clamp(0.72rem, 2.5vw, 0.84rem);
+      font-weight: 800;
+      box-shadow: var(--pop-shadow-sm);
+      margin: 0 auto 14px;
+      max-width: 92%;
+      line-height: 1.4;
+      box-sizing: border-box;
+      white-space: normal;
+    }
+
+    .hero-main-title {
+      font-size: clamp(1.42rem, 5.2vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.3;
+      letter-spacing: -0.5px;
+      color: var(--color-charcoal-ink);
+      margin-bottom: 14px;
+      padding: 0 4px;
+      word-break: normal;
+    }
+
+    .hero-main-title .highlight-coral {
+      background: var(--color-roof-coral);
+      color: var(--color-cloud-white);
+      padding: 2px 10px;
+      border-radius: 12px;
+      border: 2.5px solid var(--color-charcoal-ink);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle;
+      box-shadow: var(--pop-shadow-sm);
+      transform: rotate(-1.5deg);
+      line-height: 1.25;
+      margin: 2px 4px;
+    }
+
+    .hero-subhead {
+      font-size: clamp(0.88rem, 2.7vw, 1.15rem);
+      font-weight: 700;
+      color: #3b3b3b;
+      max-width: 660px;
+      margin: 0 auto 24px;
+      line-height: 1.6;
+      padding: 0 8px;
+    }
+
+    /* THE MASSIVE RISING GLOBE SPHERE WITH 3D CANVAS */
+    .globe-sphere-wrapper {
+      background: var(--color-globe-azure);
+      border-top: 4.5px solid var(--color-charcoal-ink);
+      border-top-left-radius: 50vw 45px;
+      border-top-right-radius: 50vw 45px;
+      padding: 50px 18px 60px;
+      color: var(--color-cloud-white);
+      position: relative;
+      box-shadow: 0 -12px 0px rgba(0,0,0,0.06);
+    }
+
+    .globe-content-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+      text-align: right;
+    }
+
+    .globe-text h2 {
+      font-size: clamp(1.5rem, 4.2vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 14px;
+      color: var(--color-cloud-white);
+      text-shadow: 2px 2px 0px var(--color-charcoal-ink);
+    }
+
+    .globe-text p {
+      font-size: clamp(0.92rem, 2.8vw, 1.08rem);
+      line-height: 1.65;
+      margin-bottom: 22px;
+      color: #e6f2ff;
+      font-weight: 600;
+    }
+
+    .hero-btn-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-coral {
+      background: var(--color-roof-coral);
+      color: var(--color-cloud-white);
+      border: 3px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 12px 26px;
+      font-size: 1rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: var(--pop-shadow-md);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .btn-hero-coral:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: var(--pop-shadow-lg);
+      background: #f74d3f;
+    }
+
+    .btn-hero-white {
+      background: var(--color-cloud-white);
+      color: var(--color-charcoal-ink);
+      border: 3px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 12px 22px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: var(--pop-shadow-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    /* 3D INTERACTIVE CANVAS CARD */
+    .three-canvas-card {
+      border: 4px solid var(--color-charcoal-ink);
+      border-radius: 28px;
+      background: radial-gradient(circle at 50% 40%, #025cb8 0%, #013774 100%);
+      box-shadow: var(--pop-shadow-lg);
+      position: relative;
+      height: 420px;
+      width: 100%;
+      overflow: hidden;
+      cursor: grab;
+      touch-action: pan-y;
+    }
+    .three-canvas-card:active {
+      cursor: grabbing;
+    }
+
+    #three-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      touch-action: pan-y;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .canvas-badge-tip {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--color-cloud-white);
+      color: var(--color-charcoal-ink);
+      border: 2px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 5px 14px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      box-shadow: var(--pop-shadow-sm);
+      pointer-events: none;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .canvas-focus-pills {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 4px 6px;
+      border: 2.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+    }
+
+    .focus-pill-btn {
+      background: #f1f5f9;
+      border: 1.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 4px 12px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: 'YekanBakh', system-ui, sans-serif;
+      white-space: nowrap;
+    }
+
+    .focus-pill-btn:hover {
+      background: #e2e8f0;
+      transform: translateY(-1px);
+    }
+
+    .focus-pill-btn.active {
+      background: var(--color-signal-yellow);
+      box-shadow: 1.5px 1.5px 0px var(--color-charcoal-ink);
+    }
+
+    /* ==========================================================================
+       SECTION: THE 1-SECOND COMIC TRANSFORMATION (BEFORE VS AFTER)
+       ========================================================================== */
+    section.karl-section {
+      padding: 50px 14px;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .section-title-badge {
+      display: inline-block;
+      background: var(--color-roof-coral);
+      color: var(--color-cloud-white);
+      border: 2.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 6px 18px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      box-shadow: var(--pop-shadow-sm);
+      margin-bottom: 12px;
+      transform: rotate(-1deg);
+      max-width: 90%;
+    }
+
+    .section-heading-big {
+      font-size: clamp(1.4rem, 4.2vw, 2.5rem);
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      margin-bottom: 12px;
+      line-height: 1.35;
+      padding: 0 12px;
+      word-break: normal;
+      box-sizing: border-box;
+    }
+
+    .section-subheading-clean {
+      font-size: clamp(0.86rem, 2.6vw, 1.05rem);
+      color: #4a4a4a;
+      max-width: 640px;
+      margin: 0 auto 28px;
+      font-weight: 600;
+      line-height: 1.6;
+      padding: 0 12px;
+      box-sizing: border-box;
+    }
+
+    .transform-comic-grid {
+      max-width: 1060px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      text-align: right;
+      padding: 0 4px;
+    }
+
+    .comic-card {
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: 22px;
+      padding: 22px 16px;
+      box-shadow: var(--pop-shadow-md);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--color-cloud-white);
+      box-sizing: border-box;
+    }
+    .card-before {
+      background: #fafafa;
+    }
+    .card-after {
+      border-color: var(--color-charcoal-ink);
+      box-shadow: 8px 8px 0px var(--color-globe-azure);
+    }
+
+    .comic-badge {
+      display: inline-block;
+      padding: 5px 14px;
+      border: 2px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .comic-card h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--color-charcoal-ink);
+    }
+
+    .comic-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .comic-list li {
+      font-size: 0.92rem;
+      font-weight: 700;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    /* ==========================================================================
+       SECTION: NEUROSCIENCE & CRITICAL THINKING IN THE AI ERA
+       ========================================================================== */
+    .science-section {
+      background: var(--color-cloud-white);
+      border-top: 4px solid var(--color-charcoal-ink);
+      border-bottom: 4px solid var(--color-charcoal-ink);
+      padding: 65px 16px;
+      text-align: center;
+      position: relative;
+    }
+
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      max-width: 1140px;
+      margin: 32px auto 0;
+      text-align: right;
+    }
+
+    .science-card {
+      background: #fdfdf9;
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pop);
+      padding: 24px 20px;
+      box-shadow: var(--pop-shadow-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .science-card:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: var(--pop-shadow-lg);
+    }
+
+    .science-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .science-icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      border: 2.5px solid var(--color-charcoal-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .science-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      line-height: 1.35;
+    }
+
+    .science-source-pill {
+      display: inline-block;
+      font-size: 0.74rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      border: 1.5px solid var(--color-charcoal-ink);
+      margin-bottom: 6px;
+      align-self: flex-start;
+      line-height: 1.45;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .science-card p {
+      font-size: 0.88rem;
+      line-height: 1.65;
+      color: #3b3b3b;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .science-takeaway-tag {
+      background: #f1f5f9;
+      border: 2px solid var(--color-charcoal-ink);
+      border-radius: 12px;
+      padding: 8px 12px;
+      font-size: 0.80rem;
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+    }
+
+    .science-banner-formula {
+      max-width: 1060px;
+      margin: 36px auto 0;
+      background: var(--color-signal-yellow);
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: 24px;
+      padding: 22px 26px;
+      box-shadow: var(--pop-shadow-md);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: right;
+    }
+
+    .science-banner-formula .formula-icon {
+      font-size: 2.2rem;
+      flex-shrink: 0;
+    }
+
+    .science-banner-formula .formula-text {
+      font-size: clamp(0.92rem, 2.4vw, 1.1rem);
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      line-height: 1.55;
+    }
+
+    /* ==========================================================================
+       SECTION: THE 3 POP-ART ARTIFACT EXHIBITS (WHAT KIDS BUILD)
+       ========================================================================== */
+    .exhibits-pop-grid {
+      max-width: 1140px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      text-align: right;
+    }
+
+    .exhibit-pop-card {
+      background: var(--color-cloud-white);
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: 26px;
+      padding: 20px;
+      box-shadow: var(--pop-shadow-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+    }
+
+    .exhibit-image-box {
+      border: 3px solid var(--color-charcoal-ink);
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      background: #f6f6f6;
+      height: 220px;
+    }
+    .exhibit-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .cohort-tag {
+      background: var(--color-signal-yellow);
+      color: var(--color-charcoal-ink);
+      border: 1.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 3px 10px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .exhibit-pop-card h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--color-charcoal-ink);
+    }
+
+    .exhibit-pop-card p {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: #555555;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .output-callout-bubble {
+      background: #fff4d1;
+      border: 2px dashed var(--color-charcoal-ink);
+      border-radius: 14px;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ==========================================================================
+       LOCAL QAEMSHAHR MARKET CALLOUT BAR (FIX FOR OVERLAP BUG)
+       ========================================================================== */
+    .local-market-bar {
+      max-width: 1060px;
+      margin: 48px auto 0;
+      background: var(--color-cloud-white);
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: 24px;
+      padding: 20px 28px;
+      box-shadow: var(--pop-shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 5;
+    }
+    .local-market-bar .badge {
+      background: var(--color-signal-yellow);
+      border: 2px solid var(--color-charcoal-ink);
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.88rem;
+      font-weight: 800;
+      display: inline-block;
+    }
+
+    /* ==========================================================================
+       SCIENTIFIC DATA VISUALIZATION DASHBOARD (WEF / AI4K12 / UNESCO)
+       ========================================================================== */
+    .data-lab-wrapper {
+      max-width: 1140px;
+      margin: 40px auto 0;
+      background: var(--color-cloud-white);
+      border: 4px solid var(--color-charcoal-ink);
+      border-radius: 32px;
+      box-shadow: var(--pop-shadow-lg);
+      padding: 36px 28px;
+      text-align: right;
+    }
+
+    .data-lab-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 3px dashed #e2e8f0;
+    }
+
+    .data-lab-title-group h3 {
+      font-size: clamp(1.25rem, 3vw, 1.65rem);
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .data-lab-tabs-nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .data-tab-btn {
+      background: #f1f5f9;
+      border: 2.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 8px 18px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      cursor: pointer;
+      box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'YekanBakh', system-ui, sans-serif;
+    }
+
+    .data-tab-btn:hover {
+      transform: translate(-1px, -1px);
+      box-shadow: 3px 3px 0px var(--color-charcoal-ink);
+      background: #e2e8f0;
+    }
+
+    .data-tab-btn.active {
+      background: var(--color-signal-yellow);
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0px var(--color-charcoal-ink);
+    }
+
+    .data-panel {
+      display: none;
+      animation: fadeInData 0.3s ease;
+    }
+
+    .data-panel.active {
+      display: block;
+    }
+
+    @keyframes fadeInData {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Skills Compare Grid (WEF) */
+    .skills-compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 24px;
+    }
+
+    .compare-column {
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: 24px;
+      padding: 22px;
+      background: #fafaf9;
+      box-shadow: 4px 4px 0px var(--color-charcoal-ink);
+    }
+
+    .compare-column.col-decline {
+      background: #fff5f5;
+    }
+
+    .compare-column.col-surge {
+      background: #f0fdf4;
+    }
+
+    .col-header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      border: 2px solid var(--color-charcoal-ink);
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .col-decline .col-header-badge {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .col-surge .col-header-badge {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .skill-bar-row {
+      margin-bottom: 16px;
+    }
+
+    .skill-bar-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.86rem;
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      margin-bottom: 6px;
+    }
+
+    .skill-bar-track {
+      height: 14px;
+      background: #e2e8f0;
+      border: 2px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      border-radius: var(--radius-pill);
+      transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .skill-bar-fill.fill-red {
+      background: linear-gradient(90deg, #f87171, #ef3b2c);
+    }
+
+    .skill-bar-fill.fill-green {
+      background: linear-gradient(90deg, #34d399, #10b981);
+    }
+
+    .skill-detail-note {
+      font-size: 0.76rem;
+      color: #555;
+      font-weight: 600;
+      margin-top: 3px;
+    }
+
+    /* Pillars Grid (AI4K12) */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 16px;
+    }
+
+    .pillar-card {
+      background: var(--color-cloud-white);
+      border: 3px solid var(--color-charcoal-ink);
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 3px 3px 0px var(--color-charcoal-ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 5px 5px 0px var(--color-charcoal-ink);
+    }
+
+    .pillar-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--color-signal-yellow);
+      border: 2px solid var(--color-charcoal-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .pillar-card h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      margin-bottom: 8px;
+    }
+
+    .pillar-card p {
+      font-size: 0.82rem;
+      line-height: 1.55;
+      color: #4b5563;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .pillar-output-badge {
+      background: #eff6ff;
+      border: 1.5px solid #3b82f6;
+      border-radius: 10px;
+      padding: 5px 8px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #1d4ed8;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Global & Neuro Grid */
+    .global-neuro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .country-stat-card {
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: 24px;
+      padding: 22px;
+      background: #fafaf9;
+      box-shadow: 4px 4px 0px var(--color-charcoal-ink);
+    }
+
+    .country-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .country-flag-name {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      min-width: 140px;
+    }
+
+    .country-bar-wrap {
+      flex: 1;
+      height: 14px;
+      background: #e2e8f0;
+      border: 2px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      overflow: hidden;
+    }
+
+    .country-bar-fill {
+      height: 100%;
+      background: var(--color-globe-azure);
+      border-radius: var(--radius-pill);
+    }
+
+    .country-percent {
+      font-size: 0.88rem;
+      font-weight: 800;
+      min-width: 42px;
+      text-align: left;
+    }
+
+    .neuro-quote-box {
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: 24px;
+      padding: 22px;
+      background: #fefce8;
+      box-shadow: 4px 4px 0px var(--color-charcoal-ink);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .neuro-timeline-step {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+
+    .neuro-step-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      border: 2px solid var(--color-charcoal-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      background: #fff;
+    }
+
+    .neuro-step-content h5 {
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      margin-bottom: 2px;
+    }
+
+    .neuro-step-content p {
+      font-size: 0.80rem;
+      font-weight: 600;
+      color: #4b5563;
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       SECTION: B2B PARTNERSHIP DOME FOR ACADEMIES
+       ========================================================================== */
+    .b2b-pop-box {
+      background: var(--color-globe-azure);
+      border: 4px solid var(--color-charcoal-ink);
+      border-radius: 32px;
+      box-shadow: 8px 8px 0px var(--color-charcoal-ink);
+      padding: 40px 24px;
+      color: var(--color-cloud-white);
+      max-width: 1060px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 30px;
+      align-items: center;
+      text-align: right;
+    }
+
+    .b2b-left-copy h2 {
+      font-size: clamp(1.5rem, 3.8vw, 2rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      text-shadow: 2px 2px 0px var(--color-charcoal-ink);
+    }
+
+    .b2b-left-copy p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      color: #e6f2ff;
+      font-weight: 600;
+    }
+
+    .b2b-pills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .b2b-item-pill {
+      background: var(--color-cloud-white);
+      color: var(--color-charcoal-ink);
+      border: 2px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 8px 14px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      box-shadow: var(--pop-shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .b2b-calc-white-card {
+      background: var(--color-cloud-white);
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: 24px;
+      box-shadow: var(--pop-shadow-md);
+      padding: 22px;
+      color: var(--color-charcoal-ink);
+      text-align: center;
+    }
+
+    .slider-pop-row {
+      margin-bottom: 14px;
+      text-align: right;
+    }
+    .slider-pop-row label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .slider-pop-row span.val {
+      color: var(--color-roof-coral);
+      font-size: 0.95rem;
+    }
+
+    input[type="range"].pop-slider {
+      width: 100%;
+      height: 12px;
+      border-radius: 6px;
+      background: #e2e8f0;
+      border: 2px solid var(--color-charcoal-ink);
+      outline: none;
+      -webkit-appearance: none;
+      touch-action: pan-y;
+    }
+    input[type="range"].pop-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-signal-yellow);
+      border: 2.5px solid var(--color-charcoal-ink);
+      box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+      cursor: pointer;
+    }
+    input[type="range"].pop-slider::-moz-range-thumb {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--color-signal-yellow);
+      border: 2.5px solid var(--color-charcoal-ink);
+      box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+      cursor: pointer;
+    }
+
+    .pop-profit-readout {
+      background: #fdf5d6;
+      border: 2.5px solid var(--color-charcoal-ink);
+      border-radius: 18px;
+      padding: 14px;
+      margin: 14px 0;
+      box-shadow: var(--pop-shadow-sm);
+    }
+    .pop-profit-readout .amt {
+      font-size: clamp(1.6rem, 5vw, 2.1rem);
+      font-weight: 800;
+      color: var(--color-roof-coral);
+      letter-spacing: -0.5px;
+    }
+
+    /* ==========================================================================
+       SECTION: INSTRUCTOR CREDENTIALS & CHILD SAFETY (FROM BUSINESS PLAN)
+       ========================================================================== */
+    .instructor-section {
+      background: var(--color-cloud-white);
+      border-top: 4px solid var(--color-charcoal-ink);
+      border-bottom: 4px solid var(--color-charcoal-ink);
+      padding: 65px 16px;
+      position: relative;
+    }
+
+    .instructor-box {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .instructor-bio-card {
+      background: #fdfae7;
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pop);
+      padding: 28px;
+      box-shadow: var(--pop-shadow-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: right;
+    }
+
+    .instructor-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    .instructor-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 20px;
+      background: var(--color-signal-yellow);
+      border: 3px solid var(--color-charcoal-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      box-shadow: var(--pop-shadow-sm);
+      flex-shrink: 0;
+    }
+
+    .instructor-title-h3 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--color-charcoal-ink);
+      line-height: 1.3;
+    }
+
+    .instructor-badges-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 18px;
+    }
+
+    .cred-badge {
+      background: var(--color-cloud-white);
+      border: 2px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 4px 12px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+      color: var(--color-charcoal-ink);
+    }
+
+    .cred-badge.highlight {
+      background: var(--color-globe-azure);
+      color: white;
+    }
+
+    .safety-shield-card {
+      background: #f0fdf4;
+      border: 3.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pop);
+      padding: 28px;
+      box-shadow: var(--pop-shadow-lg);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: right;
+    }
+
+    .safety-grid-items {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .safety-item-row {
+      background: var(--color-cloud-white);
+      border: 2px solid var(--color-charcoal-ink);
+      border-radius: 14px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+    }
+
+    .safety-item-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .safety-item-text h5 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      margin-bottom: 3px;
+      color: var(--color-charcoal-ink);
+    }
+
+    .safety-item-text p {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #555;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .instructor-box {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    /* ==========================================================================
+       FOOTER & STICKY MOBILE ACTION BAR
+       ========================================================================== */
+    footer.karl-footer {
+      background: var(--color-signal-yellow);
+      border-top: 4px solid var(--color-charcoal-ink);
+      padding: 30px 18px calc(95px + env(safe-area-inset-bottom, 0px));
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .footer-phone-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--color-cloud-white);
+      border: 3px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 10px 22px;
+      font-size: 1.1rem;
+      box-shadow: var(--pop-shadow-md);
+      color: var(--color-charcoal-ink);
+      text-decoration: none;
+      margin-bottom: 14px;
+      transition: all 0.2s ease;
+    }
+
+    /* STICKY MOBILE BOTTOM BAR (HIGH CONVERSION) */
+    .mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--color-signal-yellow);
+      border-top: 3.5px solid var(--color-charcoal-ink);
+      padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+      z-index: 900;
+      box-shadow: 0 -6px 16px rgba(0,0,0,0.1);
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .mobile-sticky-bar .call-btn {
+      background: var(--color-roof-coral);
+      color: white;
+      border: 2.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 10px 16px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--pop-shadow-sm);
+      flex: 1;
+      justify-content: center;
+    }
+    .mobile-sticky-bar .reserve-btn {
+      background: var(--color-cloud-white);
+      color: var(--color-charcoal-ink);
+      border: 2.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 10px 14px;
+      font-weight: 800;
+      font-size: 0.88rem;
+      box-shadow: var(--pop-shadow-sm);
+      cursor: pointer;
+      flex: 1;
+    }
+
+    /* Modal Sheet */
+    .pop-modal-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.72);
+      backdrop-filter: blur(4px);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .pop-modal-backdrop.open {
+      display: flex;
+    }
+    .pop-modal-card {
+      background: var(--color-cloud-white);
+      border: 4px solid var(--color-charcoal-ink);
+      border-radius: 24px;
+      box-shadow: var(--pop-shadow-lg);
+      padding: 26px 18px calc(24px + env(safe-area-inset-bottom, 0px));
+      max-width: 440px;
+      width: 100%;
+      max-height: calc(100dvh - 24px);
+      max-height: calc(100vh - 24px);
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      position: relative;
+      text-align: center;
+      box-sizing: border-box;
+      margin: auto;
+    }
+    .modal-close-x {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--color-roof-coral);
+      color: white;
+      border: 2.5px solid var(--color-charcoal-ink);
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      min-height: 44px;
+      border-radius: 50%;
+      font-weight: 800;
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--pop-shadow-sm);
+      z-index: 10;
+      touch-action: manipulation;
+      transition: transform 0.15s ease;
+    }
+    .modal-close-x:hover {
+      transform: scale(1.08);
+    }
+    .pop-input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 2.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      font-size: 16px; /* Prevents unwanted iOS Safari auto-zoom on focus */
+      font-weight: 700;
+      margin-bottom: 12px;
+      outline: none;
+      box-sizing: border-box;
+      font-family: 'YekanBakh', system-ui, sans-serif;
+    }
+
+    /* ==========================================================================
+       MOBILE OPTIMIZATION BREAKPOINTS (UNDER 768px & 480px)
+       ========================================================================== */
+    @media (max-width: 768px) {
+      .show-mobile { display: inline !important; }
+      .hide-mobile { display: none !important; }
+
+      /* Remove all floating decorative cartoon clouds and stars on mobile to prevent overflow */
+      .pop-cloud, .pop-star {
+        display: none !important;
+      }
+
+      /* Header: Centered Prominent Brand with Comfortable Touch Target */
+      header.karl-nav {
+        padding: 8px 12px 6px;
+        min-height: 56px;
+      }
+      .karl-nav-container {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        min-height: 46px;
+      }
+      .nav-side-right {
+        display: flex !important;
+        visibility: hidden;
+        width: 50px;
+        min-width: 50px;
+        pointer-events: none;
+      }
+      .nav-side-left {
+        position: static;
+        transform: none;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: auto;
+        z-index: 5;
+      }
+      .brand-group {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        margin: 0 auto;
+        text-align: center;
+        text-decoration: none;
+        touch-action: manipulation;
+        flex: 1;
+      }
+      .brand-badge {
+        font-size: 1.15rem;
+        padding: 5px 15px;
+        border-width: 2.5px;
+        box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        white-space: nowrap;
+      }
+      .brand-planet-icon {
+        font-size: 1.15rem;
+      }
+      .brand-name {
+        font-size: 0.72rem;
+        letter-spacing: 1.5px;
+        font-weight: 900;
+        opacity: 0.95;
+        display: inline-block !important;
+      }
+      .btn-nav-call {
+        min-height: 40px;
+        min-width: 44px;
+        padding: 6px 12px;
+        font-size: 0.82rem;
+        gap: 5px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-pill);
+        touch-action: manipulation;
+        box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+      }
+      .btn-nav-call .call-num-full {
+        display: none !important;
+      }
+      .btn-nav-call .call-num-short {
+        display: inline !important;
+      }
+
+      /* Sections scroll margin on mobile to account for sticky header */
+      #transform, #science, #exhibits, #instructor, #b2b, .data-lab-wrapper {
+        scroll-margin-top: 88px;
+      }
+
+      /* Hero Mobile Section */
+      .hero-container {
+        position: relative;
+        z-index: 5;
+        padding: 0 12px;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .hero-top-speech-bubble {
+        font-size: 0.78rem;
+        padding: 6px 14px;
+        margin-bottom: 12px;
+        max-width: 95%;
+        line-height: 1.4;
+      }
+      .hero-main-title {
+        font-size: clamp(1.25rem, 5.2vw, 1.65rem);
+        line-height: 1.38;
+        margin-bottom: 12px;
+        padding: 0 4px;
+      }
+      .hero-main-title .highlight-coral {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        padding: 2px 10px;
+        margin: 2px 4px;
+        line-height: 1.25;
+        font-size: 0.96em;
+      }
+      .hero-subhead {
+        font-size: 0.88rem;
+        line-height: 1.62;
+        margin-bottom: 20px;
+        padding: 0 6px;
+      }
+
+      /* Globe & 3D Interactive Stage */
+      .globe-sphere-wrapper {
+        border-top-left-radius: 50% 26px;
+        border-top-right-radius: 50% 26px;
+        padding: 28px 12px 40px;
+        overflow-x: clip;
+      }
+      .globe-content-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+      }
+      .globe-text h2 {
+        font-size: clamp(1.22rem, 4.6vw, 1.65rem);
+        margin-bottom: 10px;
+        line-height: 1.35;
+      }
+      .globe-text p {
+        font-size: 0.88rem;
+        line-height: 1.62;
+        margin-bottom: 18px;
+        padding: 0 4px;
+      }
+      .hero-btn-row {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        gap: 10px;
+      }
+      .btn-hero-coral, .btn-hero-white {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+        padding: 12px 18px;
+        font-size: 0.94rem;
+        box-sizing: border-box;
+      }
+      .three-canvas-container-wrap {
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+      }
+      .three-canvas-card {
+        height: clamp(245px, 62vw, 295px);
+        order: -1;
+        border-radius: 22px;
+        box-shadow: var(--pop-shadow-md);
+        touch-action: pan-y;
+        width: 100%;
+        max-width: 100%;
+      }
+      .canvas-badge-tip {
+        top: 10px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        padding: 5px 12px;
+        font-size: 0.72rem;
+        font-weight: 800;
+        white-space: nowrap;
+        max-width: 92%;
+        text-align: center;
+        box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+      }
+
+      /* Sticky Mobile Bottom Bar */
+      .mobile-sticky-bar {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: var(--color-signal-yellow);
+        border-top: 3.5px solid var(--color-charcoal-ink);
+        padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+        z-index: 900;
+        box-shadow: 0 -6px 16px rgba(0,0,0,0.12);
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+      }
+      .mobile-sticky-bar .call-btn {
+        min-height: 46px;
+        padding: 10px 14px;
+        font-size: 0.90rem;
+        border-radius: var(--radius-pill);
+      }
+      .mobile-sticky-bar .reserve-btn {
+        min-height: 46px;
+        padding: 10px 12px;
+        font-size: 0.88rem;
+        border-radius: var(--radius-pill);
+      }
+
+      /* Sections Mobile Typography & Comic Layout */
+      section.karl-section {
+        padding: 44px 14px 56px;
+      }
+      .section-heading-big {
+        font-size: clamp(1.22rem, 4.4vw, 1.6rem);
+        padding: 0 6px;
+        line-height: 1.35;
+      }
+      .section-subheading-clean {
+        font-size: 0.84rem;
+        padding: 0 6px;
+        margin-bottom: 20px;
+        line-height: 1.58;
+      }
+      .section-title-badge {
+        font-size: 0.82rem;
+        padding: 5px 14px;
+      }
+
+      /* Comic Transform Cards (#transform) */
+      .transform-comic-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 4px;
+      }
+      .comic-card {
+        padding: 20px 16px;
+        border-radius: 20px;
+        border-width: 3px;
+      }
+      .card-after {
+        box-shadow: 5px 5px 0px var(--color-globe-azure);
+      }
+      .comic-card h3 {
+        font-size: 1.18rem;
+        line-height: 1.35;
+      }
+      .comic-list li {
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+
+      /* Science & Data Lab Dashboard (#science) */
+      .science-section {
+        padding: 42px 12px 60px;
+        overflow-x: clip;
+      }
+      .science-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 24px;
+        padding: 0 4px;
+      }
+      .science-card {
+        padding: 18px 14px;
+        border-radius: 18px;
+        border-width: 3px;
+      }
+      .science-banner-formula {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px 14px;
+        margin-top: 24px;
+        border-radius: 18px;
+      }
+      .science-banner-formula .formula-icon {
+        font-size: 1.8rem;
+      }
+      .science-banner-formula .formula-text {
+        font-size: 0.88rem;
+        line-height: 1.55;
+      }
+      .data-lab-wrapper {
+        padding: 18px 12px;
+        margin-top: 24px;
+        border-radius: 22px;
+        overflow: hidden;
+      }
+      .data-lab-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        padding-bottom: 14px;
+        margin-bottom: 16px;
+      }
+      .data-lab-tabs-nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap !important;
+        gap: 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 4px 4px 8px;
+        scroll-snap-type: x mandatory;
+        box-sizing: border-box;
+      }
+      .data-lab-tabs-nav::-webkit-scrollbar {
+        display: none;
+      }
+      .data-tab-btn {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        white-space: nowrap;
+        font-size: 0.84rem;
+        font-weight: 800;
+        padding: 9px 16px;
+        min-height: 44px;
+        border-radius: var(--radius-pill);
+        touch-action: manipulation;
+        box-sizing: border-box;
+      }
+      .data-tab-btn.active {
+        background: var(--color-signal-yellow);
+        color: var(--color-charcoal-ink);
+        border: 2.5px solid var(--color-charcoal-ink);
+        box-shadow: var(--pop-shadow-sm);
+        font-weight: 900;
+      }
+      .skills-compare-grid, .global-neuro-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .compare-column {
+        padding: 16px 12px;
+        border-radius: 18px;
+      }
+      .skill-bar-label {
+        flex-wrap: wrap;
+        gap: 4px;
+        font-size: 0.84rem;
+      }
+      .skill-detail-note {
+        font-size: 0.76rem;
+        line-height: 1.45;
+      }
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .pillar-card {
+        padding: 16px 14px;
+      }
+      .country-stat-card, .neuro-quote-box {
+        padding: 16px 12px;
+        border-radius: 18px;
+      }
+      .country-flag-name {
+        min-width: 95px;
+        font-size: 0.78rem;
+      }
+      .country-row {
+        gap: 8px;
+      }
+      .country-percent {
+        font-size: 0.82rem;
+        min-width: 38px;
+      }
+
+      /* Exhibits (#exhibits) */
+      .exhibits-pop-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 4px;
+      }
+      .exhibit-pop-card {
+        padding: 18px 14px;
+        border-radius: 20px;
+        border-width: 3px;
+      }
+      .exhibit-image-box {
+        height: 185px;
+        border-radius: 16px;
+      }
+      .exhibit-pop-card .btn-hero-coral {
+        min-height: 48px;
+        width: 100%;
+        justify-content: center;
+        font-size: 0.95rem;
+      }
+      .local-market-bar {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+        padding: 16px 14px;
+        margin-top: 24px;
+        border-radius: 18px;
+      }
+      .local-market-bar div {
+        text-align: center !important;
+      }
+      .local-market-bar a {
+        width: 100%;
+        justify-content: center;
+        min-height: 48px;
+      }
+
+      /* Instructor (#instructor) */
+      .instructor-section {
+        padding: 42px 12px 60px;
+        overflow-x: clip;
+      }
+      .instructor-box {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 4px;
+      }
+      .instructor-bio-card, .safety-shield-card {
+        padding: 20px 14px;
+        border-radius: 20px;
+        border-width: 3px;
+      }
+      .safety-shield-card {
+        margin-bottom: 8px;
+      }
+      .instructor-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .instructor-avatar {
+        width: 56px;
+        height: 56px;
+        font-size: 1.8rem;
+        border-radius: 16px;
+        flex-shrink: 0;
+      }
+      .instructor-title-h3 {
+        font-size: 1.25rem;
+      }
+      .instructor-badges-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        margin: 14px 0;
+      }
+      .cred-badge {
+        font-size: 0.78rem;
+        padding: 6px 10px;
+        border-radius: 10px;
+        line-height: 1.45;
+        white-space: normal;
+        word-break: break-word;
+      }
+
+      /* B2B Partnership (#b2b) */
+      .b2b-pop-box {
+        grid-template-columns: 1fr;
+        padding: 24px 14px 28px;
+        border-radius: 24px;
+        gap: 20px;
+      }
+      .b2b-left-copy {
+        text-align: center;
+      }
+      .b2b-left-copy h2 {
+        font-size: 1.35rem;
+        line-height: 1.35;
+      }
+      .b2b-left-copy p {
+        font-size: 0.88rem;
+        line-height: 1.6;
+      }
+      .b2b-item-pill {
+        border-radius: 14px;
+        padding: 9px 12px;
+        font-size: 0.82rem;
+        line-height: 1.5;
+        text-align: right;
+        align-items: flex-start;
+      }
+      .b2b-calc-white-card {
+        padding: 22px 14px;
+        border-radius: 20px;
+      }
+      .b2b-calc-white-card .btn-hero-coral {
+        min-height: 48px;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* Footer */
+      footer.karl-footer {
+        padding: 28px 14px calc(120px + env(safe-area-inset-bottom, 0px)) !important;
+      }
+      .footer-phone-box {
+        font-size: 0.95rem;
+        padding: 10px 16px;
+        min-height: 46px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Modal (#pop-modal) */
+      .pop-modal-card {
+        padding: 24px 16px calc(24px + env(safe-area-inset-bottom, 0px));
+        border-radius: 22px;
+        max-width: 420px;
+        width: 100%;
+        max-height: calc(88dvh);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      .pop-input {
+        font-size: 16px !important; /* Strictly prevents iOS Safari zoom */
+        min-height: 50px;
+        border-radius: var(--radius-pill);
+        padding: 12px 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-main-title {
+        font-size: 1.30rem;
+        line-height: 1.36;
+      }
+      .hero-subhead {
+        font-size: 0.86rem;
+        line-height: 1.58;
+      }
+      .brand-badge {
+        font-size: 1.10rem;
+        padding: 4px 14px;
+      }
+      .brand-name {
+        font-size: 0.70rem;
+        letter-spacing: 1.4px;
+      }
+      .btn-nav-call {
+        font-size: 0.76rem;
+        padding: 6px 10px;
+        min-height: 38px;
+      }
+      .section-heading-big {
+        font-size: 1.25rem;
+      }
+      .section-subheading-clean {
+        font-size: 0.82rem;
+      }
+      .three-canvas-card {
+        height: clamp(235px, 60vw, 275px);
+      }
+      .pop-modal-card {
+        padding: 22px 14px calc(20px + env(safe-area-inset-bottom, 0px));
+        border-radius: 20px;
+      }
+    }
+  
+    /* ==========================================================================
+       HYPERFRAMES MOTION ENHANCEMENTS & POP-ART VISUAL POLISH
+       ========================================================================== */
+    /* 1. Halftone Ben-Day Comic Dots Pattern (Adds tactile pop-art depth) */
+    .karl-hero {
+      background-color: var(--color-signal-yellow);
+      background-image: radial-gradient(rgba(51, 51, 51, 0.08) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+    }
+    .globe-sphere-wrapper {
+      background-color: var(--color-globe-azure);
+      background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1.5px, transparent 1.5px);
+      background-size: 24px 24px;
+    }
+    .science-section {
+      background-image: radial-gradient(rgba(0, 127, 255, 0.05) 1.5px, transparent 1.5px);
+      background-size: 22px 22px;
+    }
+
+    /* 2. Shimmer Light Sweep Effect on High-Value Badges & CTAs */
+    .shimmer-badge, .highlight-coral, .btn-hero-coral, .brand-badge {
+      position: relative;
+      overflow: hidden;
+    }
+    .shimmer-badge::after, .highlight-coral::after, .btn-hero-coral::after, .brand-badge::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.42),
+        transparent
+      );
+      transform: rotate(25deg);
+      animation: sweepGlow 4.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      pointer-events: none;
+    }
+    @keyframes sweepGlow {
+      0% { transform: translateX(-150%) rotate(25deg); }
+      32%, 100% { transform: translateX(380%) rotate(25deg); }
+    }
+
+    /* 3. Floating Kinetic Feature Chips around 3D Planet */
+    .three-canvas-container-wrap {
+      position: relative;
+      width: 100%;
+    }
+    .kinetic-chip {
+      position: absolute;
+      background: var(--color-cloud-white);
+      color: var(--color-charcoal-ink);
+      border: 2.5px solid var(--color-charcoal-ink);
+      border-radius: var(--radius-pill);
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      box-shadow: 3px 3px 0px var(--color-charcoal-ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      z-index: 5;
+      white-space: nowrap;
+      pointer-events: auto;
+      transition: transform 0.22s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+      cursor: default;
+    }
+    .kinetic-chip:hover {
+      transform: scale(1.08) !important;
+      box-shadow: 5px 5px 0px var(--color-charcoal-ink);
+      background: #fef08a;
+    }
+    .chip-1 {
+      top: -14px;
+      left: -12px;
+      animation: floatChip1 5s ease-in-out infinite;
+      transform: rotate(-3deg);
+    }
+    .chip-2 {
+      bottom: 22px;
+      left: -18px;
+      animation: floatChip2 6s ease-in-out infinite;
+      transform: rotate(2deg);
+    }
+    .chip-3 {
+      top: 14px;
+      right: -16px;
+      animation: floatChip3 5.5s ease-in-out infinite;
+      transform: rotate(3deg);
+    }
+
+    @keyframes floatChip1 {
+      0%, 100% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-7px) rotate(-1deg); }
+    }
+    @keyframes floatChip2 {
+      0%, 100% { transform: translateY(0) rotate(2deg); }
+      50% { transform: translateY(-6px) rotate(4deg); }
+    }
+    @keyframes floatChip3 {
+      0%, 100% { transform: translateY(0) rotate(3deg); }
+      50% { transform: translateY(-8px) rotate(1deg); }
+    }
+
+    @media (max-width: 992px) {
+      .kinetic-chip {
+        display: none !important; /* Keep mobile clean without overflow */
+      }
+    }
+
+    /* 4. Interactive 3D Parallax Tilt & Specular Shine on Cards */
+    .tilt-card {
+      transition: transform 0.16s ease-out, box-shadow 0.2s ease;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+    .tilt-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%), rgba(255,255,255,0.22) 0%, transparent 65%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.22s ease;
+      z-index: 3;
+    }
+    .tilt-card:hover::before {
+      opacity: 1;
+    }
+
+    /* 5. Tactile Squash & Stretch Spring Buttons */
+    .btn-hero-coral:active, .btn-hero-white:active, .btn-nav-reserve:active, .brand-group:active, .data-tab-btn:active {
+      transform: scale(0.95) translateY(2px) !important;
+      box-shadow: 2px 2px 0px var(--color-charcoal-ink) !important;
+      transition: transform 0.08s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.08s ease !important;
+    }
+
+    /* 6. Exhibit Card Hover Smooth Zoom */
+    .exhibit-image-box img {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .exhibit-pop-card:hover .exhibit-image-box img {
+      transform: scale(1.06);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- TOP NAVIGATION -->
+  <header class="karl-nav">
+    <div class="karl-nav-container">
+      
+      <!-- Right: Action CTA (Desktop) -->
+      <div class="nav-side-right">
+        <button class="btn-nav-reserve hide-mobile" onclick="openPopModal('رزرو سریع دوره')">
+          <span>ثبت‌نام و مشاوره ✨</span>
+        </button>
+      </div>
+
+      <!-- Center: Distinct, Bold Centered Brand Logo -->
+      <a href="#" class="brand-group" aria-label="پلنت وای | صفحه اصلی">
+        <span class="brand-badge">
+          <span class="brand-planet-icon">🪐</span>
+          <span>پلنت وای</span>
+        </span>
+        <span class="brand-name">PLANETWHY AI</span>
+      </a>
+
+      <!-- Left: Direct Phone Call CTA -->
+      <div class="nav-side-left">
+        <a href="tel:09118702633" class="btn-nav-call">
+          <span>📞</span>
+          <span class="call-num-full">۰۹۱۱۸۷۰۲۶۳۳</span>
+          <span class="call-num-short">تماس</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       HERO: SUNNY YELLOW SKY & RISING AZURE GLOBE WITH 3D CANVAS
+       ======================================================================== -->
+  <section class="karl-hero">
+    <!-- AUTHENTIC POP-ART CARTOON CLOUDS & SPARKLE STARS -->
+    <!-- Left Side Clouds & Stars -->
+    <div class="pop-cloud pop-cloud-anim-1 pop-cloud-left-corner" style="top: 25px; left: 2%;">
+      <svg width="125" height="75" viewBox="0 0 140 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 32 68 C 18 68 8 57 8 43 C 8 30 18 20 30 20 C 35 9 48 3 62 7 C 73 1 93 3 102 14 C 115 12 128 21 128 34 C 138 38 140 52 132 63 C 125 68 114 68 104 68 Z" fill="#ffffff" stroke="#333333" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="pop-cloud pop-cloud-anim-2 pop-cloud-hide-tablet" style="top: 115px; left: 6%;">
+      <svg width="105" height="65" viewBox="0 0 115 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 28 58 C 14 58 6 48 6 36 C 6 25 15 18 26 18 C 31 8 45 4 57 9 C 66 4 82 6 87 16 C 99 16 109 25 109 37 C 109 49 99 58 87 58 Z" fill="#ffffff" stroke="#333333" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" />
+      </svg>
+    </div>
+    <svg class="pop-star pop-cloud-hide-tablet" width="22" height="22" viewBox="0 0 24 24" style="top: 30px; left: 14%;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0 L14.8 9.2 L24 12 L14.8 14.8 L12 24 L9.2 14.8 L0 12 L9.2 9.2 Z" fill="#ffffff" stroke="#333333" stroke-width="2.5" stroke-linejoin="round" />
+    </svg>
+
+    <!-- Right Side Clouds & Stars -->
+    <div class="pop-cloud pop-cloud-anim-3 pop-cloud-right-corner" style="top: 20px; right: 2%;">
+      <svg width="125" height="75" viewBox="0 0 140 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 32 68 C 18 68 8 57 8 43 C 8 30 18 20 30 20 C 35 9 48 3 62 7 C 73 1 93 3 102 14 C 115 12 128 21 128 34 C 138 38 140 52 132 63 C 125 68 114 68 104 68 Z" fill="#ffffff" stroke="#333333" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round" />
+      </svg>
+    </div>
+    <div class="pop-cloud pop-cloud-anim-1 pop-cloud-hide-tablet" style="top: 120px; right: 5%;">
+      <svg width="90" height="58" viewBox="0 0 85 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 20 46 C 10 46 4 38 4 29 C 4 20 11 15 19 15 C 23 7 34 4 43 8 C 50 4 62 6 66 14 C 75 14 82 21 82 30 C 82 40 75 46 66 46 Z" fill="#ffffff" stroke="#333333" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" />
+      </svg>
+    </div>
+    <svg class="pop-star pop-cloud-hide-tablet" width="20" height="20" viewBox="0 0 24 24" style="top: 90px; right: 13%; animation-delay: 1.5s;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0 L14.8 9.2 L24 12 L14.8 14.8 L12 24 L9.2 14.8 L0 12 L9.2 9.2 Z" fill="#ffffff" stroke="#333333" stroke-width="2.5" stroke-linejoin="round" />
+    </svg>
+
+    <div class="hero-container">
+      
+      <div class="hero-top-speech-bubble bounce-anim">
+        <span>🚀 آکادمی تخصصی هوش مصنوعی و خلاقیت کودکان قائم‌شهر</span>
+      </div>
+
+      <h1 class="hero-main-title">
+        فرزند شما <span class="highlight-coral">خالق آینده</span> است؛<br />
+        نه مصرف‌کننده بازی و اینترنت!
+      </h1>
+
+      <p class="hero-subhead">
+        در پلنت وای، ساعت‌های تلف‌شده پشت صفحه گوشی به تالیف کتاب چاپی با نام کودک، ساخت ترانه و بازی‌سازی برای فرزندان قائم‌شهر و مازندران تبدیل می‌شود.
+      </p>
+
+    </div>
+
+    <!-- THE MASSIVE RISING GLOBE SPHERE (#007fff) WITH 3D WEBGL STAGE -->
+    <div class="globe-sphere-wrapper">
+      <div class="globe-content-grid">
+        
+        <!-- 3D THREE.JS WEBGL INTERACTIVE STAGE (ORDERED FIRST ON MOBILE) -->
+        <div class="three-canvas-container-wrap">
+          <div class="three-canvas-card" id="three-card">
+            <div class="canvas-badge-tip">
+              <span>🪐</span>
+              <span>سیاره سه‌بعدی PlanetWhy | بکشید تا بچرخد!</span>
+            </div>
+            <canvas id="three-canvas"></canvas>
+          </div>
+          <!-- Floating Kinetic Feature Chips -->
+          <div class="kinetic-chip chip-1">
+            <span>📚</span>
+            <span>تالیف کتاب چاپی با AI</span>
+          </div>
+          <div class="kinetic-chip chip-2">
+            <span>🎮</span>
+            <span>بازی‌سازی ۲بعدی کودک</span>
+          </div>
+          <div class="kinetic-chip chip-3">
+            <span>💡</span>
+            <span>حل مسئله و تفکر نقاد</span>
+          </div>
+        </div>
+
+        <div class="globe-text">
+          <h2>کودک شما در سال ۲۰۳۵ یک معمار نوآور است!</h2>
+          <p>
+            <strong data-counter-target="85" data-counter-suffix="٪" style="color: #ffe600; font-size: 1.15em;">۸۵٪</strong> از مشاغل آینده هنوز به وجود نیامده‌اند. تنها مهارتی که هرگز قدیمی نمی‌شود، توانایی هدایت هوش مصنوعی، حل مسئله و خلاقیت ساختارمند است.
+          </p>
+          
+          <div class="hero-btn-row">
+            <a href="#exhibits" class="btn-hero-coral">
+              <span>دیدن ۳ دوره آموزشی</span>
+              <span>🚀</span>
+            </a>
+            <button class="btn-hero-white" onclick="openPopModal('رزرو جلسه تعیین سطح کودک')">
+              <span>رزرو کلاس آزمایشی</span>
+              <span>✨</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========================================================================
+       SECTION: THE 1-SECOND COMIC TRANSFORMATION (BEFORE VS AFTER)
+       ======================================================================== -->
+  <section id="transform" class="karl-section" style="text-align: center;">
+    <div style="max-width: 1060px; margin: 0 auto;">
+      
+      <span class="section-title-badge">⚡ تحول در ۱ ثانیه</span>
+      <h2 class="section-heading-big">کودک شما کدام مسیر را انتخاب می‌کند؟</h2>
+      <p class="section-subheading-clean">
+        بدون خواندن متن‌های پیچیده؛ تفاوت دنیای کودک مصرف‌کننده و کودک خالق را در یک نگاه ببینید:
+      </p>
+
+      <div class="transform-comic-grid">
+        
+        <!-- Before Card -->
+        <div class="comic-card card-before">
+          <div>
+            <span class="comic-badge" style="background: #e2e8f0; color: #475569;">دنیای قدیم • مصرف‌کننده منفعل 😴</span>
+            <h3>دامنه اعتیاد به اسکرین</h3>
+            <ul class="comic-list">
+              <li>❌ ۴ تا ۷ ساعت اسکرول بیهوده ریلز و بازی‌های آماده تکراری</li>
+              <li>❌ افت شدید تمرکز درسی و اعتیاد به دوپامین زودگذر</li>
+              <li>❌ مصرف‌کننده محض فناوری بدون درک اینکه پشت صحنه چه می‌گذرد</li>
+            </ul>
+          </div>
+          <div style="margin-top: 18px; font-weight: 800; color: #ef3b2c; font-size: 0.9rem;">
+            فرجام: هدررفت طلایی‌ترین سال‌های یادگیری مغز
+          </div>
+        </div>
+
+        <!-- After Card -->
+        <div class="comic-card card-after">
+          <div>
+            <span class="comic-badge" style="background: var(--color-roof-coral); color: white;">سوپرپاور پلنت وای • معمار آینده 🚀</span>
+            <h3 style="color: var(--color-globe-azure);">کودک خالق و نوآور هوش مصنوعی</h3>
+            <ul class="comic-list">
+              <li>✅ تالیف و چاپ فیزیکی کتاب داستان با نام و عکس خود کودک</li>
+              <li>✅ ساخت آهنگ و ترانه‌سرایی و متحرک‌سازی با صدای واقعی خودش</li>
+              <li>✅ ساخت بازی‌های ویدیویی دوبعدی و ربات هوشمند حل تکالیف</li>
+            </ul>
+          </div>
+          <div style="margin-top: 18px; font-weight: 800; color: var(--color-globe-azure); font-size: 0.9rem;">
+            فرجام: تسلط مطلق بر مهارت‌های کلیدی مشاغل سال ۲۰۳۵
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: NEUROSCIENCE & CRITICAL THINKING IN THE AI ERA
+       ======================================================================== -->
+  <section id="science" class="science-section">
+    <div style="max-width: 1140px; margin: 0 auto;">
+      
+      <span class="section-title-badge" style="background: var(--color-globe-azure);">
+        🧠 پژوهش‌های نوروساینس و استانداردهای جهانی آموزش
+      </span>
+
+      <h2 class="section-heading-big">
+        چرا در پلنت وای اجازه نمی‌دهیم هوش مصنوعی مغز کودک را تنبل کند؟
+      </h2>
+
+      <p class="section-subheading-clean" style="max-width: 840px; margin: 0 auto 10px;">
+        تحقیقات معتبر دانشمندان در <strong>MIT Media Lab</strong> و <strong>دانشگاه استنفورد (Stanford HAI)</strong> هشدار می‌دهند: دریافت پاسخ‌های آماده از هوش مصنوعی پدیده‌ای به نام <strong>«تنبلی شناختی (Cognitive Offloading)»</strong> ایجاد می‌کند. دوره‌های پلنت وای بر اساس استاندارد بین‌المللی <strong>OECD 2030</strong> مهندسی شده‌اند تا هوش مصنوعی به جای میان‌بر تنبلی، باشگاه پرورش <strong>تفکر نقادانه (Critical Thinking)</strong> فرزندتان باشد:
+      </p>
+
+      <div class="science-grid">
+        
+        <!-- Pillar 1 -->
+        <div class="science-card">
+          <div>
+            <div class="science-card-top">
+              <div class="science-icon-box" style="background: #e0f2fe; color: #0284c7;">
+                🧠
+              </div>
+              <div>
+                <span class="science-source-pill" style="background: #e0f2fe; color: #0369a1;">
+                  🔬 پژوهش امواج مغزی (EEG) در MIT Media Lab
+                </span>
+                <h3>سپر دفاعی در برابر تنبلی شناختی</h3>
+              </div>
+            </div>
+            <p>
+              آزمایش‌های عصب‌شناسی دانشگاه MIT ثابت کرده تکیه بر جواب‌های آماده هوش مصنوعی، فعالیت سیناپس‌های تحلیلی را متوقف می‌کند. در پلنت وای، AI هرگز پاسخ آماده تحویل نمی‌دهد؛ بلکه مانند یک <strong>«حریف تمرینی سقراطی (Socratic AI)»</strong> با طرح سوالات زنجیره‌ای، مغز کودک را وادار به استدلال و تحلیل عمیق می‌کند.
+            </p>
+          </div>
+          <div class="science-takeaway-tag">
+            <span>🛡️</span>
+            <span>دستاورد: فعال نگه‌داشتن اتصالات نورونی و جلوگیری از رخوت فکری</span>
+          </div>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="science-card">
+          <div>
+            <div class="science-card-top">
+              <div class="science-icon-box" style="background: #fef3c7; color: #d97706;">
+                🎯
+              </div>
+              <div>
+                <span class="science-source-pill" style="background: #fef3c7; color: #b45309;">
+                  🎓 چارچوب آموزش هوش مصنوعی Stanford HAI
+                </span>
+                <h3>تفکر نقادانه و مچ‌گیری از خطای AI</h3>
+              </div>
+            </div>
+            <p>
+              کودکان در پلنت وای می‌آموزند که هوش مصنوعی کامل نیست و دچار «توهم و سوگیری (Hallucination)» می‌شود. فرزند شما یاد می‌گیرد ادعاهای ماشین را راستی‌آزمایی (Fact-Check) کنند، مغالطه‌ها را کشف نماید و به جای پذیرش کورکورانه، در جایگاه یک قاضی و منتقد ارشد با منطق قوی تصمیم بگیرد.
+            </p>
+          </div>
+          <div class="science-takeaway-tag">
+            <span>🔍</span>
+            <span>دستاورد: تقویت تفکر انتقادی و تبدیل کودک به منتقد مستقل</span>
+          </div>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="science-card">
+          <div>
+            <div class="science-card-top">
+              <div class="science-icon-box" style="background: #fee2e2; color: #dc2626;">
+                🚀
+              </div>
+              <div>
+                <span class="science-source-pill" style="background: #fee2e2; color: #b91c1c;">
+                  🌐 گزارش مشاغل آینده مجمع جهانی اقتصاد (WEF)
+                </span>
+                <h3>پرورش مهارت‌های نامیرا در سال ۲۰۳۵</h3>
+              </div>
+            </div>
+            <p>
+              کارهای روتین و حفظی به زودی ۱۰۰٪ توسط هوش مصنوعی انجام می‌شوند. مهارت‌هایی که هرگز منسوخ نمی‌شوند: <strong>تفکر سیستمی، حل مسئله پیچیده و کنجکاوی خلاقانه</strong> است. پلنت وای تضمین می‌کند کودک شما در آینده «هدایت‌کننده هوش مصنوعی» باشد، نه جایگزین‌شده با آن!
+            </p>
+          </div>
+          <div class="science-takeaway-tag">
+            <span>🏆</span>
+            <span>دستاورد: تسلط مطلق بر مهارت‌های کلیدی و پایدار نسل آینده</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Formula Banner -->
+      <div class="science-banner-formula">
+        <div class="formula-icon">💡</div>
+        <div class="formula-text">
+          <strong>قانون طلایی آموزش در پلنت وای:</strong> در عصر هوش مصنوعی، برتری کودک در «دانستن پاسخ‌ها» نیست؛ بلکه در <strong>«طراحی پرسش‌های عمیق، ارزیابی نقادانه اطلاعات و حاکم کردن خلاقیت انسانی بر ماشین»</strong> است.
+        </div>
+      </div>
+
+      <!-- ========================================================================
+           SCIENTIFIC DATA VISUALIZATION DASHBOARD (WEF / AI4K12 / UNESCO)
+           ======================================================================== -->
+      <div class="data-lab-wrapper">
+        <div class="data-lab-header">
+          <div class="data-lab-title-group">
+            <span class="badge" style="background: var(--color-signal-yellow); border: 2px solid var(--color-charcoal-ink); padding: 4px 14px; border-radius: var(--radius-pill); font-size: 0.82rem; font-weight: 800; display: inline-block; margin-bottom: 8px;">
+              📈 آزمایشگاه داده‌های استراتژیک بین‌المللی
+            </span>
+            <h3>
+              <span>چشم‌انداز تحول مشاغل و استانداردهای جهانی (۲۰۲۵–۲۰۳۵)</span>
+            </h3>
+            <p style="font-size: 0.88rem; color: #555; font-weight: 600; margin-top: 4px;">
+              داده‌های آماری مستند از مجمع جهانی اقتصاد (WEF)، یونسکو (UNESCO 2024) و استاندارد ملی AI4K12:
+            </p>
+          </div>
+
+          <div class="data-lab-tabs-nav">
+            <button id="tab-btn-wef" class="data-tab-btn active" onclick="switchDataTab('wef')">
+              📊 زوال و جهش مهارت‌ها (WEF)
+            </button>
+            <button id="tab-btn-pillars" class="data-tab-btn" onclick="switchDataTab('pillars')">
+              🏛️ ۵ ستون جهانی AI4K12
+            </button>
+            <button id="tab-btn-global" class="data-tab-btn" onclick="switchDataTab('global')">
+              🌍 نفوذ جهانی و سن طلایی
+            </button>
+          </div>
+        </div>
+
+        <!-- PANEL 1: WEF SKILLS SHIFT -->
+        <div id="panel-wef" class="data-panel active">
+          <div class="skills-compare-grid">
+            
+            <!-- Declining Skills Column -->
+            <div class="compare-column col-decline">
+              <div class="col-header-badge">
+                <span>🔻</span>
+                <span>مهارت‌های رو به زوال و اتوماتیک‌شده (-۶۵٪)</span>
+              </div>
+              <p style="font-size: 0.82rem; color: #666; font-weight: 600; margin-bottom: 16px;">
+                آموزش‌های سنتی که تا ۳ سال آینده ارزش بازار کار خود را به طور کامل از دست می‌دهند:
+              </p>
+
+              <!-- Skill 1 -->
+              <div class="skill-bar-row">
+                <div class="skill-bar-label">
+                  <span>کدنویسی طوطی‌وار و تایپ سینتکس</span>
+                  <span style="color: #dc2626;">-۶۸٪ کاهش ارزش</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill fill-red" style="width: 68%;"></div>
+                </div>
+                <div class="skill-detail-note">اتوماسیون آنی توسط Copilot، کدهای آماده و مدل‌های هوش مصنوعی مولد</div>
+              </div>
+
+              <!-- Skill 2 -->
+              <div class="skill-bar-row">
+                <div class="skill-bar-label">
+                  <span>حفظ فرمول‌ها و محاسبات دستی ریاضی</span>
+                  <span style="color: #dc2626;">-۷۶٪ کاهش ارزش</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill fill-red" style="width: 76%;"></div>
+                </div>
+                <div class="skill-detail-note">جایگزینی موتورهای استنتاج نمادین مانند WolframAlpha و ابزارهای تحلیلی</div>
+              </div>
+
+              <!-- Skill 3 -->
+              <div class="skill-bar-row">
+                <div class="skill-bar-label">
+                  <span>ورود اطلاعات روتین، تایپ و خلاصه‌سازی خطی</span>
+                  <span style="color: #dc2626;">-۸۴٪ کاهش ارزش</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill fill-red" style="width: 84%;"></div>
+                </div>
+                <div class="skill-detail-note">انجام در چند ثانیه با مالتی‌مدیا مدل‌های بینایی ماشین و OCR هوشمند</div>
+              </div>
+            </div>
+
+            <!-- Surging Skills Column -->
+            <div class="compare-column col-surge">
+              <div class="col-header-badge">
+                <span>🔺</span>
+                <span>مهارت‌های جهشی با بالاترین نرخ رشد (+۱۸۵٪)</span>
+              </div>
+              <p style="font-size: 0.82rem; color: #15803d; font-weight: 600; margin-bottom: 16px;">
+                مهارت‌های استراتژیک و انسان‌محور که سرفصل اصلی دوره‌های پلنت وای هستند:
+              </p>
+
+              <!-- Skill 1 -->
+              <div class="skill-bar-row">
+                <div class="skill-bar-label">
+                  <span>مهندسی پرامپت، ایجنت‌های هوشمند و راهبری ابزارها</span>
+                  <span style="color: #16a34a;">+۲۱۰٪ رشد تقاضا</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill fill-green" style="width: 95%;"></div>
+                </div>
+                <div class="skill-detail-note">دانش فرماندهی به هوش مصنوعی و ساخت زنجیره‌های کاری خودکار (سرفصل اختصاصی پلنت وای)</div>
+              </div>
+
+              <!-- Skill 2 -->
+              <div class="skill-bar-row">
+                <div class="skill-bar-label">
+                  <span>تفکر نقادانه و سنجش خطا (Fact-Checking & Bias)</span>
+                  <span style="color: #16a34a;">+۱۸۵٪ رشد تقاضا</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill fill-green" style="width: 88%;"></div>
+                </div>
+                <div class="skill-detail-note">توانایی تشخیص سوگیری داده‌ها، خطاهای منطقی و توهم مدل‌های زبانی بزرگ</div>
+              </div>
+
+              <!-- Skill 3 -->
+              <div class="skill-bar-row">
+                <div class="skill-bar-label">
+                  <span>تلفیق خلاقانه چندرسانه‌ای و استوری‌تلینگ</span>
+                  <span style="color: #16a34a;">+۱۶۵٪ رشد تقاضا</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill fill-green" style="width: 78%;"></div>
+                </div>
+                <div class="skill-detail-note">ترکیب هنر، صداگذاری و تصویرسازی مولد برای خلق دارایی‌های فکری اصیل انسانی</div>
+              </div>
+
+              <!-- Skill 4 -->
+              <div class="skill-bar-row">
+                <div class="skill-bar-label">
+                  <span>تفکر سیستمی و حل مسائل چندبعدی</span>
+                  <span style="color: #16a34a;">+۱۹۵٪ رشد تقاضا</span>
+                </div>
+                <div class="skill-bar-track">
+                  <div class="skill-bar-fill fill-green" style="width: 90%;"></div>
+                </div>
+                <div class="skill-detail-note">معماری سیستم‌های نرم‌افزاری و شکستن مسائل پیچیده دنیای واقعی به اجزای قابل حل</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Stat Box -->
+          <div style="margin-top: 24px; background: #fffbe8; border: 3px solid var(--color-charcoal-ink); border-radius: 20px; padding: 16px 20px; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 16px; text-align: center; box-shadow: var(--pop-shadow-sm);">
+            <div>
+              <div style="font-size: 1.7rem; font-weight: 900; color: #dc2626;" data-counter-target="85" data-counter-suffix=" میلیون">۸۵ میلیون</div>
+              <div style="font-size: 0.82rem; font-weight: 700; color: #555;">شغل روتین در حال حذف توسط اتوماسیون</div>
+            </div>
+            <div style="border-right: 2px dashed #cbd5e1;"></div>
+            <div>
+              <div style="font-size: 1.7rem; font-weight: 900; color: #16a34a;" data-counter-target="97" data-counter-suffix=" میلیون">۹۷ میلیون</div>
+              <div style="font-size: 0.82rem; font-weight: 700; color: #555;">شغل نوین متکی بر ارکستراسیون هوش مصنوعی</div>
+            </div>
+            <div style="border-right: 2px dashed #cbd5e1;"></div>
+            <div>
+              <div style="font-size: 1.7rem; font-weight: 900; color: var(--color-globe-azure);" data-counter-target="2.4" data-counter-float="true" data-counter-suffix=" برابر">۲.۴ برابر</div>
+              <div style="font-size: 0.82rem; font-weight: 700; color: #555;">ارزش بازار متخصصان مسلط بر تفکر و ابزار AI</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 2: AI4K12 & UNESCO 5 BIG IDEAS -->
+        <div id="panel-pillars" class="data-panel">
+          <div style="margin-bottom: 20px;">
+            <p style="font-size: 0.92rem; font-weight: 700; color: var(--color-charcoal-ink);">
+              انجمن هوش مصنوعی آمریکا (AAAI) و یونسکو (UNESCO) یادگیری هوش مصنوعی در مدارس را به ۵ ستون مفهومی تقسیم کرده‌اند که تمام مراحل آموزشی پلنت وای بر پایه آن مهندسی شده است:
+            </p>
+          </div>
+
+          <div class="pillars-grid">
+            
+            <div class="pillar-card">
+              <div>
+                <div class="pillar-num">۱</div>
+                <h4>ادراک ماشینی (Perception)</h4>
+                <p>کامپیوترها جهان را با حسگرها می‌بینند و می‌شنوند. کودک می‌آموزد چگونه داده خام صوتی و تصویری به ماتریس پیکسل و ویژگی تبدیل می‌شود.</p>
+              </div>
+              <div class="pillar-output-badge">
+                <span>👁️</span>
+                <span>پروژه: بینایی ماشین و تشخیص ژست</span>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div>
+                <div class="pillar-num">۲</div>
+                <h4>بازنمایی و استدلال (Reasoning)</h4>
+                <p>هوش مصنوعی داده‌ها را در قالب گراف‌ها، نقشه‌ها و درخت‌های تصمیم‌گیری سازماندهی می‌کند تا برای مسائل پیچیده راه‌حل پیدا کند.</p>
+              </div>
+              <div class="pillar-output-badge">
+                <span>🧩</span>
+                <span>پروژه: فلوچارت تصمیم‌گیری و سناریو</span>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div>
+                <div class="pillar-num">۳</div>
+                <h4>یادگیری از داده (Machine Learning)</h4>
+                <p>ماشین‌ها از داده‌ها یاد می‌گیرند نه با حفظ کدهای دستوری. تفاوت برنامه‌نویسی سنتی با شبکه‌های عصبی و تاثیر کیفیت داده بر نتیجه مدل.</p>
+              </div>
+              <div class="pillar-output-badge">
+                <span>🤖</span>
+                <span>پروژه: آموزش مدل با Teachable Machine</span>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div>
+                <div class="pillar-num">۴</div>
+                <h4>تعامل طبیعی (Natural Interaction)</h4>
+                <p>درک نحوه کار مدل‌های زبانی بزرگ (LLMs)، پردازش زبان طبیعی انسان، شناخت زمینه گفتگو و اصول مهندسی پرامپت اصولی.</p>
+              </div>
+              <div class="pillar-output-badge">
+                <span>💬</span>
+                <span>پروژه: ساخت چت‌بات و کاراکتر سخنگو</span>
+              </div>
+            </div>
+
+            <div class="pillar-card">
+              <div>
+                <div class="pillar-num">۵</div>
+                <h4>اثرات اجتماعی و اخلاق (Societal Impact)</h4>
+                <p>شناخت سوگیری الگوریتم‌ها، مسئولیت در قبال هوش مصنوعی، خطرات دیپ‌فیک، صیانت از حریم خصوصی و حفظ عاملیت و استقلال فکری انسان.</p>
+              </div>
+              <div class="pillar-output-badge">
+                <span>⚖️</span>
+                <span>پروژه: ارزیابی اخلاقی و تفکر نقادانه</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- PANEL 3: GLOBAL ADOPTION & NEUROPLASTICITY -->
+        <div id="panel-global" class="data-panel">
+          <div class="global-neuro-grid">
+            
+            <!-- Global Adoption Bars -->
+            <div class="country-stat-card">
+              <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px; color: var(--color-charcoal-ink);">
+                🌐 نفوذ آموزش رسمی هوش مصنوعی در مدارس دنیا (۲۰۲۵)
+              </h4>
+              <p style="font-size: 0.8rem; color: #666; font-weight: 600; margin-bottom: 16px;">
+                کشورهای پیشرفته آموزش AI را از سطح دبستان به عنوان ضرورت ملی اجباری کرده‌اند:
+              </p>
+
+              <!-- Country 1 -->
+              <div class="country-row">
+                <div class="country-flag-name">
+                  <span>🇪🇪 استونی (Estonia)</span>
+                </div>
+                <div class="country-bar-wrap">
+                  <div class="country-bar-fill" style="width: 100%; background: #0284c7;"></div>
+                </div>
+                <div class="country-percent" style="color: #0284c7;">۱۰۰٪</div>
+              </div>
+
+              <!-- Country 2 -->
+              <div class="country-row">
+                <div class="country-flag-name">
+                  <span>🇸🇬 سنگاپور (Singapore)</span>
+                </div>
+                <div class="country-bar-wrap">
+                  <div class="country-bar-fill" style="width: 88%; background: #0284c7;"></div>
+                </div>
+                <div class="country-percent" style="color: #0284c7;">۸۸٪</div>
+              </div>
+
+              <!-- Country 3 -->
+              <div class="country-row">
+                <div class="country-flag-name">
+                  <span>🇬🇧 انگلستان (UK)</span>
+                </div>
+                <div class="country-bar-wrap">
+                  <div class="country-bar-fill" style="width: 74%; background: #0284c7;"></div>
+                </div>
+                <div class="country-percent" style="color: #0284c7;">۷۴٪</div>
+              </div>
+
+              <!-- Country 4 -->
+              <div class="country-row">
+                <div class="country-flag-name">
+                  <span>🇺🇸 آمریکا (AI4K12)</span>
+                </div>
+                <div class="country-bar-wrap">
+                  <div class="country-bar-fill" style="width: 68%; background: #0284c7;"></div>
+                </div>
+                <div class="country-percent" style="color: #0284c7;">۶۸٪</div>
+              </div>
+
+              <!-- Iran / Mazandaran Callout -->
+              <div class="country-row" style="background: #fff8a6; border: 2.5px solid var(--color-charcoal-ink); border-radius: 14px; padding: 8px 12px; margin-top: 14px; box-shadow: 2px 2px 0px var(--color-charcoal-ink);">
+                <div class="country-flag-name" style="font-weight: 800; color: #b91c1c;">
+                  <span>🇮🇷 ایران (وضعیت فعلی)</span>
+                </div>
+                <div class="country-bar-wrap">
+                  <div class="country-bar-fill" style="width: 4%; background: #ef3b2c;"></div>
+                </div>
+                <div class="country-percent" style="color: #b91c1c;">کمتر از ۴٪</div>
+              </div>
+
+              <p style="font-size: 0.8rem; font-weight: 700; color: #166534; margin-top: 12px; background: #dcfce7; border: 1.5px solid #16a34a; padding: 8px 12px; border-radius: 10px;">
+                🎯 <strong>فرصت طلایی پلنت وای:</strong> فرزند شما در قائم‌شهر و مازندران جزو ۱٪ پیشگامان ایران خواهد بود که با استانداردهای جهانی همگام می‌شود.
+              </p>
+            </div>
+
+            <!-- Neuroplasticity Golden Age -->
+            <div class="neuro-quote-box">
+              <h4 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px; color: var(--color-charcoal-ink);">
+                🧬 نوروساینس: چرا سنین ۷ تا ۱۴ سال «پنجره طلایی» است؟
+              </h4>
+
+              <div class="neuro-timeline-step">
+                <div class="neuro-step-icon">🌱</div>
+                <div class="neuro-step-content">
+                  <h5>۷ تا ۱۰ سال (شکل‌گیری شهود پایه - Intuitive Mental Model)</h5>
+                  <p>در این سن، درک ماشین به عنوان ابزار شکل می‌گیرد و ترس از فناوری کاملاً محو می‌شود. ذهن کودک مانند زبان مادری این مفاهیم را ثبت می‌کند.</p>
+                </div>
+              </div>
+
+              <div class="neuro-timeline-step">
+                <div class="neuro-step-icon">⚡</div>
+                <div class="neuro-step-content">
+                  <h5>۱۱ تا ۱۴ سال (اوج انعطاف سیناپسی - Creative Agency)</h5>
+                  <p>سن طلایی تفکر انتزاعی و طراحی سیستم؛ نوجوان از مرحله «بازی با ابزار» به مرحله «خلق محصول مستقل و تفکر تحلیلی» پرواز می‌کند.</p>
+                </div>
+              </div>
+
+              <div class="neuro-timeline-step">
+                <div class="neuro-step-icon">⚠️</div>
+                <div class="neuro-step-content">
+                  <h5 style="color: #dc2626;">به تعویق انداختن تا دوران دانشگاه (۲۰ سالگی)</h5>
+                  <p>تثبیت الگوهای ذهنی سنتی، مقاومت شناختی و عقب‌ماندگی از همسالان جهانی که از کودکی با AI بزرگ شده‌اند.</p>
+                </div>
+              </div>
+
+              <div style="background: #ffffff; border: 2px solid var(--color-charcoal-ink); border-radius: 12px; padding: 10px 14px; font-size: 0.84rem; font-weight: 800; text-align: center; color: var(--color-charcoal-ink); box-shadow: 2px 2px 0px var(--color-charcoal-ink);">
+                ✨ سرمایه‌گذاری امروز در کودکی = ۱۰ سال برتری رقابتی در جوانی
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: THE 3 POP-ART EXHIBITS (3 AGE COHORTS FROM BUSINESS PLAN)
+       ======================================================================== -->
+  <section id="exhibits" class="karl-section" style="background: #fff8a6; text-align: center; border-top: 4px solid var(--color-charcoal-ink); border-bottom: 4px solid var(--color-charcoal-ink);">
+    <div style="max-width: 1140px; margin: 0 auto;">
+      
+      <span class="section-title-badge">🎨 دوره‌های تخصصی ۳ سطحی</span>
+      <h2 class="section-heading-big">بچه‌ها در پلنت وای دقیقاً چه چیزی می‌سازند؟</h2>
+      <p class="section-subheading-clean">
+        سیلابس پروژه‌محور و بین‌المللی با متدولوژی امن Teacher-Led برای گروه‌های سنی ۷ تا ۱۷ سال:
+      </p>
+
+      <div class="exhibits-pop-grid">
+        
+        <!-- Exhibit 1: Level 1 (Explorer 7-10) -->
+        <div class="exhibit-pop-card">
+          <div>
+            <div class="exhibit-image-box">
+              <img src="./images/clay_book.jpg" alt="کتاب داستان اختصاصی هوش مصنوعی" />
+            </div>
+            <span class="cohort-tag">سطح ۱ • کاشف (۷ تا ۱۰ سال)</span>
+            <h4>کتاب داستان مصور تالیفی</h4>
+            <p>آموزش بدون کدنویسی و بازی‌های عملی؛ کودک کاراکتر اختصاصی‌اش را طراحی کرده و قصه خود را کامل می‌سازد.</p>
+            
+            <div class="output-callout-bubble">
+              <span>🎁</span>
+              <span>خروجی: چاپ فیزیکی کتاب داستان با نام کودک!</span>
+            </div>
+          </div>
+
+          <button class="btn-hero-coral" style="width: 100%; justify-content: center; padding: 10px;" onclick="openPopModal('دوره سطح ۱: کتاب داستان مصور')">
+            ثبت‌نام سطح کاشف 📖
+          </button>
+        </div>
+
+        <!-- Exhibit 2: Level 2 (Builder 11-14) -->
+        <div class="exhibit-pop-card">
+          <div>
+            <div class="exhibit-image-box">
+              <img src="./images/clay_music.jpg" alt="استودیو موزیک و انیمیشن" />
+            </div>
+            <span class="cohort-tag">سطح ۲ • سازنده (۱۱ تا ۱۴ سال)</span>
+            <h4>استودیو موسیقی و انیمیشن</h4>
+            <p>آهنگسازی در سبک‌های مختلف با ابزارهای روز، ساخت شعر، انیمیت تصاویر و دوبله با صدای ضبط‌شده خود نوجوان.</p>
+            
+            <div class="output-callout-bubble">
+              <span>🎬</span>
+              <span>خروجی: موزیک‌ویدیو ۲ دقیقه‌ای با صدای کودک!</span>
+            </div>
+          </div>
+
+          <button class="btn-hero-coral" style="width: 100%; justify-content: center; padding: 10px;" onclick="openPopModal('دوره سطح ۲: موزیک و انیمیشن')">
+            ثبت‌نام سطح سازنده 🎵
+          </button>
+        </div>
+
+        <!-- Exhibit 3: Level 3 (Developer 15-17) -->
+        <div class="exhibit-pop-card">
+          <div>
+            <div class="exhibit-image-box">
+              <img src="./images/clay_game.jpg" alt="کنسول بازی و ربات هوشمند" />
+            </div>
+            <span class="cohort-tag">سطح ۳ • مهندس نوجوان (۱۵ تا ۱۷ سال)</span>
+            <h4>آزمایشگاه بازی و ربات درسی</h4>
+            <p>برنامه‌نویسی پایتون و لاجیک الگوریتمی؛ ساخت بازی‌های موبایل و ربات دستیار شخصی برای تکالیف مدرسه و پورتفولیو آینده.</p>
+            
+            <div class="output-callout-bubble">
+              <span>🕹️</span>
+              <span>خروجی: بازی موبایل + ربات هوشمند درسی!</span>
+            </div>
+          </div>
+
+          <button class="btn-hero-coral" style="width: 100%; justify-content: center; padding: 10px;" onclick="openPopModal('دوره سطح ۳: مهندسی بازی و AI')">
+            ثبت‌نام سطح مهندس 🕹️
+          </button>
+        </div>
+
+      </div>
+
+      <!-- LOCAL MARKET BADGE -->
+      <div class="local-market-bar">
+        <div style="text-align: right;">
+          <span class="badge">📍 ویژه خانواده‌های قائم‌شهر و ساری</span>
+          <p style="font-size: 0.9rem; font-weight: 700; margin-top: 4px; color: #444;">
+            کلاس‌های حضوری با اینترنت پایدار و تجهیزات کارگاهی در برترین مراکز آموزشی شهر.
+          </p>
+        </div>
+        <a href="tel:09118702633" class="btn-hero-coral" style="padding: 9px 18px; font-size: 0.9rem;">
+          📞 تماس مستقیم: ۰۹۱۱۸۷۰۲۶۳۳
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: INSTRUCTOR CREDENTIALS & CHILD SAFETY PROTOCOL (FROM BUSINESS PLAN)
+       ======================================================================== -->
+  <section id="instructor" class="instructor-section">
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center; margin-bottom: 30px;">
+      <span class="section-title-badge" style="background: var(--color-signal-yellow); color: var(--color-charcoal-ink);">
+        👨‍🏫 متدولوژی علمی و تضمین ایمنی خانواده
+      </span>
+      <h2 class="section-heading-big">
+        فرزند شما توسط متخصص واقعی هوش مصنوعی هدایت می‌شود
+      </h2>
+      <p class="section-subheading-clean" style="max-width: 800px;">
+        تمایز بنیادین پلنت وای با کلاس‌های متفرقه: نه کاربرد سطحی ابزار، بلکه تلفیق مهندسی الگوریتم با اصول روانشناسی یادگیری کودکان:
+      </p>
+    </div>
+
+    <div class="instructor-box">
+      
+      <!-- Card 1: Founder & Instructor -->
+      <div class="instructor-bio-card">
+        <div>
+          <div class="instructor-header">
+            <div class="instructor-avatar">👨‍💻</div>
+            <div>
+              <h3 class="instructor-title-h3">امیرحسین عنایتی</h3>
+              <p style="font-size: 0.88rem; font-weight: 700; color: #555; margin-top: 3px;">
+                مهندس ارشد هوش مصنوعی و طراح سرفصل‌های نخبگان پلنت وای
+              </p>
+            </div>
+          </div>
+
+          <!-- Academic & Work Badges -->
+          <div class="instructor-badges-wrap">
+            <span class="cred-badge highlight">🎓 کارشناس ارشد هوش مصنوعی • دانشگاه شهید بهشتی</span>
+            <span class="cred-badge highlight">🏢 مهندس هوش مصنوعی در پارک فناوری پردیس</span>
+            <span class="cred-badge">⚙️ کارشناس مهندسی صنایع • دانشگاه علم و صنعت ایران</span>
+            <span class="cred-badge">👨‍🏫 برگزارکننده دوره‌های تخصصی AI و هدایت +۱۰۰ دانشجو</span>
+          </div>
+
+          <!-- International Certifications Showcase -->
+          <div style="background: #ffffff; border: 2.5px solid var(--color-charcoal-ink); border-radius: 16px; padding: 14px; margin: 16px 0; box-shadow: var(--pop-shadow-sm);">
+            <div style="font-size: 0.88rem; font-weight: 800; color: var(--color-roof-coral); margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+              <span>📜</span>
+              <span>مدارک معتبر بین‌المللی یادگیری ماشین و هوش مصنوعی:</span>
+            </div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 0.82rem; font-weight: 700; color: #333; padding: 0;">
+              <li style="display: flex; align-items: flex-start; gap: 8px;">
+                <span style="color: var(--color-globe-azure); font-weight: 900; margin-top: 1px; flex-shrink: 0;">✓</span>
+                <span style="line-height: 1.55;"><bdi style="font-weight: 800; color: #111;">Machine Learning Specialization:</bdi> تخصص یادگیری ماشین از DeepLearning.AI</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 8px;">
+                <span style="color: var(--color-globe-azure); font-weight: 900; margin-top: 1px; flex-shrink: 0;">✓</span>
+                <span style="line-height: 1.55;"><bdi style="font-weight: 800; color: #111;">AI Agent Developer Specialization:</bdi> توسعه‌دهنده سیستم‌های هوشمند از دانشگاه Vanderbilt</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 8px;">
+                <span style="color: var(--color-globe-azure); font-weight: 900; margin-top: 1px; flex-shrink: 0;">✓</span>
+                <span style="line-height: 1.55;"><bdi style="font-weight: 800; color: #111;">IBM Data Science Professional:</bdi> مدرک حرفه‌ای بین‌المللی علم داده از شرکت IBM</span>
+              </li>
+            </ul>
+          </div>
+
+          <p style="font-size: 0.90rem; font-weight: 600; line-height: 1.6; color: #333; margin-bottom: 16px;">
+            «آموزش هوش مصنوعی به نسل جدید نباید با کاربری سطحی ابزارها اشتباه گرفته شود. هدف ما در پلنت وای، آموزش عمیق تفکر الگوریتمی و یادگیری ماشین است تا فرزند شما در آینده هدایت‌کننده هوش مصنوعی باشد، نه کاربری که ماشین جایگزین او شود.»
+          </p>
+        </div>
+
+        <div style="background: #ffffff; border: 2px solid var(--color-charcoal-ink); border-radius: 14px; padding: 12px; box-shadow: var(--pop-shadow-sm);">
+          <span style="font-size: 0.82rem; font-weight: 800; color: var(--color-globe-azure); display: block; margin-bottom: 4px;">🔬 سابقه پژوهشی و دانشگاهی:</span>
+          <span style="font-size: 0.8rem; font-weight: 700; color: #444;">
+            سرپرست دستیاران آموزشی برنامه‌نویسی دانشگاه علم و صنعت (IUST) و پژوهشگر حوزه یادگیری ماشین
+          </span>
+        </div>
+      </div>
+
+      <!-- Card 2: Child Safety & Privacy Protocol -->
+      <div class="safety-shield-card">
+        <div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+            <div style="width: 48px; height: 48px; border-radius: 14px; background: #dcfce7; border: 2.5px solid var(--color-charcoal-ink); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 2px 2px 0px var(--color-charcoal-ink);">
+              🛡️
+            </div>
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 800; color: #166534;">پروتکل طلایی ایمنی کودک (بخش ۱۰ سند)</h3>
+              <p style="font-size: 0.8rem; font-weight: 700; color: #15803d;">حفاظت حداکثری از سلامت روان و داده‌های فرزندتان</p>
+            </div>
+          </div>
+
+          <div class="safety-grid-items">
+            <div class="safety-item-row">
+              <div class="safety-item-icon">🔐</div>
+              <div class="safety-item-text">
+                <h5>سیستم امن هدایت مربی <span dir="ltr" style="display: inline-block; font-weight: 800;">(Teacher-Led AI)</span></h5>
+                <p>کودک هیچ اکانت مستقلی روی سرورهای هوش مصنوعی خارجی نمی‌سازد؛ کلیه محیط‌ها فیلترشده و تحت هدایت مربی است.</p>
+              </div>
+            </div>
+
+            <div class="safety-item-row">
+              <div class="safety-item-icon">🚫</div>
+              <div class="safety-item-text">
+                <h5>منع آپلود داده‌های هویتی و چهره کودک</h5>
+                <p>هیچ‌گونه اطلاعات شخصی، صدا یا تصویر خصوصی دانش‌آموز در هوش مصنوعی بارگذاری نمی‌شود (حریم خصوصی ۱۰۰٪ تضمین‌شده).</p>
+              </div>
+            </div>
+
+            <div class="safety-item-row">
+              <div class="safety-item-icon">⚡</div>
+              <div class="safety-item-text">
+                <h5>استودیو مستقل بدون نیاز به فیلترشکن و اینترنت</h5>
+                <p>پروژه‌ها و کتابخانه‌ها به شکل لوکال و آفلاین آماده شده‌اند تا اختلالات و قطعی اینترنت مانع پیشرفت کارگاه نشود.</p>
+              </div>
+            </div>
+
+            <div class="safety-item-row">
+              <div class="safety-item-icon">📜</div>
+              <div class="safety-item-text">
+                <h5>گزارش هفتگی به والدین + <span dir="ltr" style="display: inline-block; font-weight: 800;">Demo Day</span></h5>
+                <p>والدین در جریان خط‌به‌خط مهارت‌های فرزند قرار می‌گیرند و در نمایشگاه پایانی، خروجی‌های واقعی او را مشاهده می‌کنند.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION: B2B PARTNERSHIP DOME FOR ACADEMIES IN QAEMSHAHR
+       ======================================================================== -->
+  <section id="b2b" class="karl-section">
+    <div class="b2b-pop-box">
+      
+      <div class="b2b-left-copy">
+        <span class="comic-badge" style="background: var(--color-signal-yellow); color: var(--color-charcoal-ink);">
+          🏛️ ویژه مدیران آموزشگاه‌ها و مدارس غیرانتفاعی قائم‌شهر و ساری
+        </span>
+        <h2>دپارتمان نخبگان هوش مصنوعی را به تابلوی موسسه خود بیفزایید!</h2>
+        <p>
+          ساعات خالی بعدازظهر و پایان هفته آموزشگاه خود را با یک همکاری مشارکتی معتبر، بدون نیاز به سرمایه‌گذاری اولیه، تامین سخت‌افزار یا دغدغه استخدام مربی، به پرمخاطب‌ترین دپارتمان شهر تبدیل کنید.
+        </p>
+
+        <div class="b2b-pills-list">
+          <div class="b2b-item-pill"><span>✓</span> قابل اجرا در مدارس غیرانتفاعی، آموزشگاه‌های زبان، علمی و کنکور مازندران</div>
+          <div class="b2b-item-pill"><span>✓</span> امکان برگزاری کارگاه آزمایشی رایگان (Demo Day) برای جذب و اقناع سریع اولیاء</div>
+          <div class="b2b-item-pill"><span>✓</span> تامین فضا از شما؛ مدیریت محتوا و تدریس تخصصی با مهندس عنایتی (ارشد AI دانشگاه بهشتی)</div>
+          <div class="b2b-item-pill"><span>✓</span> مدل همکاری منعطف و توافق مالی کاملاً شفاف در جلسه مشاوره حضوری متناسب با ظرفیت شما</div>
+        </div>
+      </div>
+
+      <div class="b2b-calc-white-card">
+        <div style="font-size: 42px; margin-bottom: 8px;">🤝</div>
+        <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-charcoal-ink); margin-bottom: 6px;">
+          جلسه حضوری و مشاوره اختصاصی
+        </h4>
+        <p style="font-size: 0.86rem; color: #555; font-weight: 700; margin-bottom: 16px; line-height: 1.5;">
+          بررسی ظرفیت‌های آموزشگاه و توافق بر سر بهترین مدل همکاری در جلسه حضوری:
+        </p>
+
+        <div class="b2b-feature-list" style="text-align: right; margin-bottom: 18px; display: flex; flex-direction: column; gap: 9px;">
+          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 10px 12px; font-size: 0.84rem; font-weight: 700; color: #334155; display: flex; align-items: center; gap: 8px;">
+            <span style="color: var(--color-globe-azure); font-size: 1.1rem;">📍</span>
+            <span>جلسه در محل موسسه شما در قائم‌شهر و ساری</span>
+          </div>
+          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 10px 12px; font-size: 0.84rem; font-weight: 700; color: #334155; display: flex; align-items: center; gap: 8px;">
+            <span style="color: var(--color-roof-coral); font-size: 1.1rem;">💼</span>
+            <span>تعیین مدل تسهیم درآمد و سهم آموزشگاه به صورت توافقی</span>
+          </div>
+          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 10px 12px; font-size: 0.84rem; font-weight: 700; color: #334155; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #16a34a; font-size: 1.1rem;">🚀</span>
+            <span>امکان برگزاری کارگاه معارفه رایگان (Demo Day) برای اولیاء</span>
+          </div>
+          <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 10px 12px; font-size: 0.84rem; font-weight: 700; color: #334155; display: flex; align-items: center; gap: 8px;">
+            <span style="color: #ca8a04; font-size: 1.1rem;">📚</span>
+            <span>ارائه نمونه کتاب‌های چاپ‌شده و دستاوردهای دانش‌آموزان</span>
+          </div>
+        </div>
+
+        <button class="btn-hero-coral" style="width: 100%; justify-content: center; font-size: 1.02rem; padding: 13px 16px; margin-bottom: 12px;" onclick="openPopModal('درخواست جلسه حضوری و مشاوره همکاری B2B')">
+          درخواست جلسه حضوری در قائم‌شهر 🤝
+        </button>
+
+        <a href="tel:09118702633" style="font-size: 0.88rem; font-weight: 800; color: var(--color-globe-azure); text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #eff6ff; border: 2px solid #bfdbfe; border-radius: var(--radius-pill); padding: 9px 16px; margin: 4px auto 0; box-sizing: border-box; width: 100%; max-width: 320px;">
+          <span>📞 تماس مستقیم با مهندس عنایتی:</span>
+          <span style="direction: ltr; font-weight: 900; letter-spacing: 0.5px;">۰۹۱۱ ۸۷۰ ۲۶۳۳</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       FOOTER & STICKY MOBILE ACTION BAR
+       ======================================================================== -->
+  <footer class="karl-footer">
+    <a href="tel:09118702633" class="footer-phone-box">
+      <span>📞 تماس مستقیم و مشاوره:</span>
+      <span style="direction: ltr; font-weight: 900; letter-spacing: 0.5px;">۰۹۱۱ ۸۷۰ ۲۶۳۳</span>
+    </a>
+
+    <p style="color: #444; font-size: 0.88rem; margin-top: 8px;">
+      © ۲۰۲۶ آکادمی نخبگان هوش مصنوعی <strong>پلنت وای</strong> | مازندران، قائم‌شهر
+    </p>
+  </footer>
+
+  <!-- STICKY MOBILE BOTTOM BAR -->
+  <div class="mobile-sticky-bar">
+    <a href="tel:09118702633" class="call-btn">
+      <span>📞</span>
+      <span>۰۹۱۱۸۷۰۲۶۳۳</span>
+    </a>
+    <button class="reserve-btn" onclick="openPopModal('رزرو سریع دوره')">
+      <span>ثبت‌نام سریع ✨</span>
+    </button>
+  </div>
+
+  <!-- POP-UP MODAL WITH GOOGLE FORMS DIRECT SYNC -->
+  <iframe name="gform_hidden_iframe" id="gform_hidden_iframe" style="display:none;" onload="if(window.gformSubmitted){showFormSuccessState();}"></iframe>
+
+  <div class="pop-modal-backdrop" id="pop-modal" onclick="if(event.target===this)closePopModal()">
+    <div class="pop-modal-card">
+      <button class="modal-close-x" onclick="closePopModal()">×</button>
+      
+      <!-- FORM BODY -->
+      <div id="pop-form-content">
+        <div style="font-size: 38px; margin-bottom: 6px;">🚀</div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 6px;" id="modal-title">
+          ثبت‌نام و رزرو جایگاه در پلنت وای
+        </h3>
+        <p style="font-size: 0.88rem; color: #555; margin-bottom: 14px; font-weight: 600;">
+          مشخصات خود را ثبت کنید تا همکاران ما در قائم‌شهر جهت هماهنگی تماس بگیرند:
+        </p>
+
+        <!-- Topic Pill -->
+        <div style="margin-bottom: 14px;">
+          <span id="modal-topic-badge" style="background: #e0f2fe; color: #0284c7; border: 1.5px solid #38bdf8; border-radius: var(--radius-pill); padding: 4px 14px; font-size: 0.82rem; font-weight: 800; display: inline-flex; align-items: center; gap: 6px;">
+            <span>🎯</span>
+            <span id="modal-topic-text">رزرو سریع دوره</span>
+          </span>
+        </div>
+
+        <form id="planetwhy-reg-form" onsubmit="handlePopSubmit(event)">
+          <input type="text" id="pop-input-name" class="pop-input" placeholder="نام والد یا نام دانش‌آموز *" required />
+          <input type="tel" id="pop-input-phone" class="pop-input" placeholder="شماره تماس همراه (مثال: ۰۹۱۱۸۷۰۲۶۳۳)" required dir="ltr" />
+          
+          <button type="submit" id="pop-submit-btn" class="btn-hero-coral" style="width: 100%; justify-content: center; font-size: 1.05rem; padding: 12px; margin-top: 4px;">
+            <span id="pop-submit-text">ثبت درخواست و هماهنگی ✨</span>
+            <span id="pop-submit-spinner" style="display:none;">⏳ در حال ارسال اطلاعات...</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- SUCCESS CONFIRMATION STATE -->
+      <div id="pop-success-content" style="display: none; padding: 14px 4px;">
+        <div style="font-size: 50px; margin-bottom: 10px; animation: bounceGently 1.5s infinite;">🎉</div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #16a34a; margin-bottom: 8px;">
+          اطلاعات شما با موفقیت ثبت شد!
+        </h3>
+        <p style="font-size: 0.9rem; color: #444; line-height: 1.6; margin-bottom: 18px; font-weight: 600;">
+          مشخصات شما در سامانه آکادمی پلنت وای ثبت گردید و به ایمیل مدیریت ارسال شد. کارشناسان ما به زودی با شما تماس خواهند گرفت.
+        </p>
+        <div style="background: #fefce8; border: 2px dashed #ca8a04; border-radius: 14px; padding: 12px 14px; font-size: 0.88rem; font-weight: 700; color: #854d0e; margin-bottom: 16px; display: flex; flex-direction: column; gap: 8px;">
+          <div>
+            📞 تماس مستقیم و مشاوره فوری:
+            <a href="tel:09118702633" style="color: #ef3b2c; text-decoration: none; font-weight: 900; direction: ltr; display: inline-block;">۰۹۱۱-۸۷۰-۲۶۳۳</a>
+          </div>
+          <div>
+            💬 پیام مستقیم در واتساپ:
+            <a href="https://wa.me/989118702633?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D9%85%D9%86%20%D8%AF%D8%B1%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D9%BE%D9%84%D9%86%D8%AA%20%D9%88%D8%A7%DB%8C%20%D8%AB%D8%A8%D8%AA%E2%80%8C%D9%86%D8%A7%D9%85%20%DA%A9%D8%B1%D8%AF%D9%85" target="_blank" rel="noopener" style="color: #16a34a; text-decoration: none; font-weight: 800;">
+              ارسال پیام به ۰۹۱۱۸۷۰۲۶۳۳ ↗
+            </a>
+          </div>
+        </div>
+        <button class="btn-hero-white" style="width: 100%; justify-content: center; font-size: 0.95rem;" onclick="closePopModal()">
+          متوجه شدم، بستن پنجره ✓
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- THREE.JS STANDARD UMD SCRIPT -->
+  <script src="./js/three.min.js"></script>
+  <script>
+    if (typeof THREE === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"><\/script>');
+    }
+  </script>
+
+  <!-- THREE.JS PLANETWHY 3D COSMIC PLANET SCENE -->
+  <script>
+        window.addEventListener('DOMContentLoaded', () => {
+      initPlanetWhyScene();
+      init3DCardTilts();
+      initNumberCounters();
+    });
+
+    function initPlanetWhyScene() {
+      if (typeof THREE === 'undefined') {
+        console.error('Three.js failed to load.');
+        return;
+      }
+
+      // 1. SETUP THREE SCENE, CAMERA & RENDERER
+      const container = document.getElementById('three-card');
+      const canvas = document.getElementById('three-canvas');
+      if (!container || !canvas) return;
+
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color('#013a7b');
+      scene.fog = new THREE.FogExp2(0x012c60, 0.02);
+
+      const isMobile = window.innerWidth <= 768;
+      const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+      camera.position.set(0, 0, window.innerWidth <= 480 ? 9.2 : (isMobile ? 8.8 : 8.1));
+      camera.lookAt(0, 0, 0);
+
+      const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: false, powerPreference: "high-performance" });
+      renderer.setSize(container.clientWidth, container.clientHeight, false);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // 2. STUDIO COSMIC LIGHTING (WARM SUN, CYAN RIM & CORE GLOW)
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.6);
+      scene.add(ambientLight);
+
+      const sunLight = new THREE.DirectionalLight(0xfff5d1, 3.4);
+      sunLight.position.set(6, 9, 7);
+      scene.add(sunLight);
+
+      const rimLight = new THREE.DirectionalLight(0x38bdf8, 2.4);
+      rimLight.position.set(-7, -3, -4);
+      scene.add(rimLight);
+
+      const coreGlow = new THREE.PointLight(0xffe600, 2.8, 14);
+      coreGlow.position.set(0, 2.5, 3.2);
+      scene.add(coreGlow);
+
+      // 3. MASTER SPACE CONTAINER (ROTATES WITH DRAG & MOUSE PARALLAX)
+      const masterGroup = new THREE.Group();
+      scene.add(masterGroup);
+
+      // ========================================================================
+      // 4. PLANETWHY: THE CORE GLOBE (سیاره چرا)
+      // ========================================================================
+      const planetGroup = new THREE.Group();
+      masterGroup.add(planetGroup);
+
+      // Materials (Karl Gonsalves Pop-Art Palette)
+      const matAzureSea = new THREE.MeshStandardMaterial({
+        color: 0x0284c7,
+        roughness: 0.16,
+        metalness: 0.12
+      });
+
+      const matEmeraldLand = new THREE.MeshStandardMaterial({
+        color: 0x10b981,
+        roughness: 0.28,
+        metalness: 0.04
+      });
+
+      const matYellowLand = new THREE.MeshStandardMaterial({
+        color: 0xffe600,
+        roughness: 0.30,
+        metalness: 0.02
+      });
+
+      const matCoralLand = new THREE.MeshStandardMaterial({
+        color: 0xef3b2c,
+        roughness: 0.26,
+        metalness: 0.05
+      });
+
+      const matWhite = new THREE.MeshStandardMaterial({
+        color: 0xffffff,
+        roughness: 0.18
+      });
+
+      const matGlowCyan = new THREE.MeshBasicMaterial({
+        color: 0x38bdf8
+      });
+
+      const matGlowYellow = new THREE.MeshBasicMaterial({
+        color: 0xffe600
+      });
+
+      // Planet Ocean Globe
+      const planetGeo = new THREE.SphereGeometry(1.88, 54, 54);
+      const planet = new THREE.Mesh(planetGeo, matAzureSea);
+      planetGroup.add(planet);
+
+      // Soft Atmospheric Halo
+      const atmoGeo = new THREE.SphereGeometry(2.08, 40, 40);
+      const atmoMat = new THREE.MeshBasicMaterial({
+        color: 0x38bdf8,
+        transparent: true,
+        opacity: 0.20,
+        side: THREE.BackSide
+      });
+      const atmoSphere = new THREE.Mesh(atmoGeo, atmoMat);
+      planetGroup.add(atmoSphere);
+
+      // Polar Ice Caps
+      const northPole = new THREE.Mesh(new THREE.SphereGeometry(0.55, 20, 10, 0, Math.PI * 2, 0, Math.PI * 0.28), matWhite);
+      northPole.position.y = 1.45;
+      const southPole = new THREE.Mesh(new THREE.SphereGeometry(0.50, 20, 10, 0, Math.PI * 2, 0, Math.PI * 0.25), matWhite);
+      southPole.position.y = -1.48;
+      southPole.rotation.x = Math.PI;
+      planetGroup.add(northPole, southPole);
+
+      // Sculpted Continents & Creative Landmasses
+      const islandConfigs = [
+        { radius: 0.76, pos: [1.2, 0.85, 1.05], mat: matEmeraldLand },
+        { radius: 0.84, pos: [-1.28, 0.65, 0.95], mat: matCoralLand },
+        { radius: 0.64, pos: [0.35, -1.35, 1.15], mat: matYellowLand },
+        { radius: 0.80, pos: [-0.9, -0.95, -1.25], mat: matEmeraldLand },
+        { radius: 0.88, pos: [1.15, -0.45, -1.2], mat: matYellowLand },
+        { radius: 0.62, pos: [-0.1, 1.42, -0.9], mat: matCoralLand },
+        { radius: 0.52, pos: [1.38, 0.15, 0.85], mat: matEmeraldLand }
+      ];
+
+      islandConfigs.forEach(cfg => {
+        const landGeo = new THREE.DodecahedronGeometry(cfg.radius, 1);
+        const land = new THREE.Mesh(landGeo, cfg.mat);
+        land.position.set(...cfg.pos);
+        planetGroup.add(land);
+      });
+
+      // ========================================================================
+      // 5. OBSERVATORY DOME & WHY BEACON (رصدخانه کنجکاوی)
+      // ========================================================================
+      const observatoryGroup = new THREE.Group();
+      observatoryGroup.position.set(0.95, 1.35, 0.85);
+      observatoryGroup.lookAt(0, 0, 0);
+      observatoryGroup.rotateX(Math.PI);
+      planetGroup.add(observatoryGroup);
+
+      const domeBase = new THREE.Mesh(new THREE.CylinderGeometry(0.38, 0.42, 0.18, 20), matCoralLand);
+      const dome = new THREE.Mesh(new THREE.SphereGeometry(0.34, 20, 20, 0, Math.PI * 2, 0, Math.PI * 0.55), matWhite);
+      dome.position.y = 0.09;
+
+      const telescope = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.09, 0.42, 16), matWhite);
+      telescope.rotation.x = -0.55;
+      telescope.position.set(0, 0.32, 0.12);
+      const telescopeLens = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.09, 0.05, 16), matGlowCyan);
+      telescopeLens.rotation.x = -0.55;
+      telescopeLens.position.set(0, 0.45, 0.22);
+
+      const antennaStem = new THREE.Mesh(new THREE.CylinderGeometry(0.02, 0.03, 0.5, 12), matWhite);
+      antennaStem.position.set(-0.25, 0.25, -0.15);
+      const antennaBeacon = new THREE.Mesh(new THREE.SphereGeometry(0.09, 14, 14), matGlowYellow);
+      antennaBeacon.position.set(-0.25, 0.52, -0.15);
+
+      observatoryGroup.add(domeBase, dome, telescope, telescopeLens, antennaStem, antennaBeacon);
+
+      // ========================================================================
+      // 6. PLANETARY RINGS (حلقه‌های شکیل کیهانی)
+      // ========================================================================
+      const ringsGroup = new THREE.Group();
+      ringsGroup.rotation.x = Math.PI / 2.35;
+      ringsGroup.rotation.y = 0.20;
+      planetGroup.add(ringsGroup);
+
+      // Inner Golden Ring
+      const ringInnerGeo = new THREE.RingGeometry(2.36, 2.76, 64);
+      const ringInnerMat = new THREE.MeshStandardMaterial({
+        color: 0xffe600,
+        side: THREE.DoubleSide,
+        roughness: 0.22,
+        metalness: 0.25
+      });
+      const ringInner = new THREE.Mesh(ringInnerGeo, ringInnerMat);
+      ringsGroup.add(ringInner);
+
+      // Middle Translucent Holographic Ring
+      const ringMidGeo = new THREE.RingGeometry(2.82, 3.12, 64);
+      const ringMidMat = new THREE.MeshStandardMaterial({
+        color: 0x38bdf8,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.65,
+        roughness: 0.10
+      });
+      const ringMid = new THREE.Mesh(ringMidGeo, ringMidMat);
+      ringsGroup.add(ringMid);
+
+      // Outer Coral Accent Ring
+      const ringOuterGeo = new THREE.RingGeometry(3.18, 3.42, 64);
+      const ringOuterMat = new THREE.MeshStandardMaterial({
+        color: 0xef3b2c,
+        side: THREE.DoubleSide,
+        roughness: 0.28
+      });
+      const ringOuter = new THREE.Mesh(ringOuterGeo, ringOuterMat);
+      ringsGroup.add(ringOuter);
+
+      // Stardust Ring Orbs (12 orbiting micro-gems in the ring)
+      const ringDustGroup = new THREE.Group();
+      ringsGroup.add(ringDustGroup);
+      const dustGeo = new THREE.SphereGeometry(0.05, 8, 8);
+      for (let d = 0; d < 12; d++) {
+        const angle = (d / 12) * Math.PI * 2;
+        const rad = 2.95 + (Math.sin(d * 1.7) * 0.3);
+        const gemMat = (d % 2 === 0) ? matGlowYellow : matGlowCyan;
+        const gem = new THREE.Mesh(dustGeo, gemMat);
+        gem.position.set(Math.cos(angle) * rad, Math.sin(angle) * rad, 0);
+        ringDustGroup.add(gem);
+      }
+
+      // Small Moon orbiting outside
+      const miniMoonGroup = new THREE.Group();
+      const miniMoon = new THREE.Mesh(new THREE.SphereGeometry(0.24, 18, 18), matWhite);
+      const miniMoonCrater = new THREE.Mesh(new THREE.SphereGeometry(0.08, 12, 12), matCoralLand);
+      miniMoonCrater.position.set(0.12, 0.1, 0.16);
+      miniMoonGroup.add(miniMoon, miniMoonCrater);
+      miniMoonGroup.position.set(3.25, 0, 0);
+      ringsGroup.add(miniMoonGroup);
+
+      // ========================================================================
+      // 7. ORBITING EXPLORER ROCKET (موشک پیشگام هوش مصنوعی)
+      // ========================================================================
+      const rocketOrbitGroup = new THREE.Group();
+      masterGroup.add(rocketOrbitGroup);
+
+      const rocket = new THREE.Group();
+
+      const rocketCone = new THREE.Mesh(new THREE.ConeGeometry(0.32, 1.05, 18), matCoralLand);
+      rocketCone.rotation.z = -Math.PI / 2;
+      rocket.add(rocketCone);
+
+      const rocketWindow = new THREE.Mesh(new THREE.SphereGeometry(0.13, 14, 14), matGlowCyan);
+      rocketWindow.position.set(0.12, 0.14, 0);
+      rocket.add(rocketWindow);
+
+      const finTop = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.18, 0.04), matYellowLand);
+      finTop.position.set(-0.35, 0.2, 0);
+      finTop.rotation.z = 0.35;
+
+      const finBottom = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.18, 0.04), matYellowLand);
+      finBottom.position.set(-0.35, -0.2, 0);
+      finBottom.rotation.z = -0.35;
+
+      const finSide = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.04, 0.18), matYellowLand);
+      finSide.position.set(-0.35, 0, 0.2);
+      rocket.add(finTop, finBottom, finSide);
+
+      const rocketFlame = new THREE.Mesh(new THREE.ConeGeometry(0.19, 0.52, 14), matGlowYellow);
+      rocketFlame.rotation.z = Math.PI / 2;
+      rocketFlame.position.set(-0.68, 0, 0);
+      rocket.add(rocketFlame);
+
+      rocket.position.set(2.88, 0, 0);
+      rocket.scale.set(0.9, 0.9, 0.9);
+      rocketOrbitGroup.add(rocket);
+
+      // ========================================================================
+      // 8. FLUFFY 3D CARTOON CLOUDS (ابرهای پاپ‌آرت اتمسفر)
+      // ========================================================================
+      const cloudsMaster = new THREE.Group();
+      planetGroup.add(cloudsMaster);
+
+      function createPuffyCloud(scale = 1.0) {
+        const cGroup = new THREE.Group();
+        const puff1 = new THREE.Mesh(new THREE.SphereGeometry(0.32 * scale, 12, 12), matWhite);
+        const puff2 = new THREE.Mesh(new THREE.SphereGeometry(0.24 * scale, 12, 12), matWhite);
+        puff2.position.set(0.25 * scale, -0.05 * scale, 0);
+        const puff3 = new THREE.Mesh(new THREE.SphereGeometry(0.22 * scale, 12, 12), matWhite);
+        puff3.position.set(-0.24 * scale, -0.05 * scale, 0);
+        cGroup.add(puff1, puff2, puff3);
+        return cGroup;
+      }
+
+      const cloud1 = createPuffyCloud(1.1);
+      cloud1.position.set(2.1, 0.7, 0.7);
+      const cloud2 = createPuffyCloud(0.85);
+      cloud2.position.set(-1.9, -0.8, 1.1);
+      const cloud3 = createPuffyCloud(0.95);
+      cloud3.position.set(0.4, 2.05, -0.8);
+      const cloud4 = createPuffyCloud(0.75);
+      cloud4.position.set(-1.2, 1.6, 0.9);
+      cloudsMaster.add(cloud1, cloud2, cloud3, cloud4);
+
+      // ========================================================================
+      // 9. COSMIC STARS & DISCOVERY GEMS (ستاره‌های اکتاهدرون درخشان)
+      // ========================================================================
+      const starsGroup = new THREE.Group();
+      masterGroup.add(starsGroup);
+      const starGeo = new THREE.OctahedronGeometry(0.12, 0);
+
+      for (let i = 0; i < 28; i++) {
+        const sMesh = new THREE.Mesh(starGeo, i % 3 === 0 ? matCoralLand : (i % 3 === 1 ? matYellowLand : matGlowCyan));
+        sMesh.position.set(
+          (Math.random() - 0.5) * 8.8,
+          (Math.random() - 0.5) * 6.8,
+          (Math.random() - 0.5) * 4.8
+        );
+        starsGroup.add(sMesh);
+      }
+
+      // ========================================================================
+      // 10. INTERACTION, TOUCH & INERTIA TRACKING
+      // ========================================================================
+      let isDragging = false;
+      let prevMousePos = { x: 0, y: 0 };
+      let velocityX = 0;
+      let velocityY = 0;
+      let targetRotY = 0;
+      let targetRotX = 0;
+      let mouseNorm = { x: 0, y: 0 };
+      let turboSpeed = 1.0;
+      let squashScale = 1.0;
+
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        prevMousePos = { x: e.clientX, y: e.clientY };
+        velocityX = 0;
+        velocityY = 0;
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        mouseNorm.x = (e.clientX / window.innerWidth) * 2 - 1;
+        mouseNorm.y = -((e.clientY / window.innerHeight) * 2 - 1);
+
+        if (isDragging) {
+          const deltaX = e.clientX - prevMousePos.x;
+          const deltaY = e.clientY - prevMousePos.y;
+          velocityX = deltaX * 0.008;
+          velocityY = deltaY * 0.006;
+          targetRotY += velocityX;
+          targetRotX += velocityY;
+          targetRotX = Math.max(-0.6, Math.min(0.6, targetRotX));
+          prevMousePos = { x: e.clientX, y: e.clientY };
+        }
+      });
+
+      container.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          isDragging = true;
+          prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+          velocityX = 0;
+          velocityY = 0;
+        }
+      }, { passive: true });
+
+      window.addEventListener('touchend', () => {
+        isDragging = false;
+      }, { passive: true });
+
+      window.addEventListener('touchcancel', () => {
+        isDragging = false;
+      }, { passive: true });
+
+      window.addEventListener('touchmove', (e) => {
+        if (isDragging && e.touches.length === 1) {
+          const deltaX = e.touches[0].clientX - prevMousePos.x;
+          const deltaY = e.touches[0].clientY - prevMousePos.y;
+          velocityX = deltaX * 0.009;
+          velocityY = deltaY * 0.007;
+          targetRotY += velocityX;
+          targetRotX += velocityY;
+          targetRotX = Math.max(-0.6, Math.min(0.6, targetRotX));
+          prevMousePos = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+      }, { passive: true });
+
+      container.addEventListener('click', () => {
+        squashScale = 0.88;
+        turboSpeed = 2.4;
+      });
+
+      function handleThreeResize() {
+        if (!container || !renderer || !camera) return;
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+        camera.aspect = width / height;
+        camera.position.z = window.innerWidth <= 480 ? 9.2 : (window.innerWidth <= 768 ? 8.8 : 8.1);
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height, false);
+      }
+      window.addEventListener('resize', handleThreeResize);
+
+      // ========================================================================
+      // 11. 60FPS ANIMATION LOOP
+      // ========================================================================
+      const clock = new THREE.Clock();
+
+      function animate() {
+        requestAnimationFrame(animate);
+
+        const elapsedTime = clock.getElapsedTime();
+
+        // 1. Natural Planetary Rotation
+        planet.rotation.y += 0.004;
+        cloudsMaster.rotation.y += 0.0028;
+
+        // 2. Drag & Parallax
+        if (!isDragging) {
+          targetRotY += 0.0025 + velocityX;
+          velocityX *= 0.94; // Inertia damping
+          targetRotX += velocityY;
+          velocityY *= 0.94;
+        }
+
+        const parallaxX = -mouseNorm.y * 0.25;
+        const parallaxY = mouseNorm.x * 0.32;
+
+        masterGroup.rotation.y += (targetRotY + parallaxY - masterGroup.rotation.y) * 0.07;
+        masterGroup.rotation.x += (targetRotX + parallaxX - masterGroup.rotation.x) * 0.07;
+
+        // 3. Squash and Stretch Bounce Decay
+        squashScale += (1.0 - squashScale) * 0.08;
+        planetGroup.scale.set(squashScale, 1.0 / Math.sqrt(squashScale), squashScale);
+
+        // 4. Orbiting Rocket
+        turboSpeed += (1.0 - turboSpeed) * 0.04;
+        rocketOrbitGroup.rotation.y += 0.018 * turboSpeed;
+        rocketOrbitGroup.rotation.z = Math.sin(elapsedTime * 1.2) * 0.18;
+
+        const flameScale = 1.0 + Math.sin(elapsedTime * 16.0) * 0.24;
+        rocketFlame.scale.set(flameScale, flameScale, flameScale);
+
+        // 5. Mini Moon Ring Orbit & Stardust Rotation
+        miniMoonGroup.rotation.y += 0.028;
+        ringDustGroup.rotation.z += 0.006;
+
+        // 6. Antenna Beacon Pulsing Glow
+        const beaconScale = 1.0 + Math.sin(elapsedTime * 6.0) * 0.22;
+        antennaBeacon.scale.set(beaconScale, beaconScale, beaconScale);
+
+        // 7. Twinkling Cosmic Stars
+        starsGroup.children.forEach((star, idx) => {
+          star.rotation.x += 0.02;
+          star.rotation.y += 0.02;
+          star.position.y += Math.sin(elapsedTime * 2.0 + idx) * 0.002;
+        });
+
+        renderer.render(scene, camera);
+      }
+      animate();
+    }
+
+    // ==========================================================================
+    // 3D CARD TILT & SPECULAR SHINE CONTROLLER
+    // ==========================================================================
+    function init3DCardTilts() {
+      if (window.matchMedia('(pointer: coarse)').matches) return; // Only on desktop pointers
+
+      const cards = document.querySelectorAll('.comic-card, .science-card, .exhibit-pop-card, .b2b-calc-white-card, .instructor-bio-card');
+      cards.forEach(card => {
+        card.classList.add('tilt-card');
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -5.5;
+          const rotateY = ((x - centerX) / centerX) * 5.5;
+          card.style.transform = `perspective(850px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translate3d(0, -3px, 6px)`;
+          card.style.setProperty('--glare-x', `${(x / rect.width * 100).toFixed(1)}%`);
+          card.style.setProperty('--glare-y', `${(y / rect.height * 100).toFixed(1)}%`);
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(850px) rotateX(0deg) rotateY(0deg) translate3d(0, 0, 0)';
+        });
+      });
+    }
+
+    // ==========================================================================
+    // KINETIC NUMBER COUNTER OBSERVER
+    // ==========================================================================
+    function initNumberCounters() {
+      const counters = document.querySelectorAll('[data-counter-target]');
+      if (!counters.length) return;
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseFloat(el.getAttribute('data-counter-target'));
+            const suffix = el.getAttribute('data-counter-suffix') || '';
+            const prefix = el.getAttribute('data-counter-prefix') || '';
+            const isFloat = el.getAttribute('data-counter-float') === 'true';
+            
+            let start = 0;
+            const duration = 1200;
+            const startTime = performance.now();
+
+            function tick(now) {
+              const elapsed = now - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              // EaseOutQuad
+              const ease = 1 - (1 - progress) * (1 - progress);
+              const current = start + (target - start) * ease;
+              
+              let formatted = isFloat ? current.toFixed(1) : Math.round(current).toString();
+              // Convert to Persian digits
+              formatted = formatted.replace(/[0-9]/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+              el.textContent = prefix + formatted + suffix;
+
+              if (progress < 1) {
+                requestAnimationFrame(tick);
+              } else {
+                let finalVal = isFloat ? target.toFixed(1) : target.toString();
+                finalVal = finalVal.replace(/[0-9]/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+                el.textContent = prefix + finalVal + suffix;
+              }
+            }
+            requestAnimationFrame(tick);
+            obs.unobserve(el);
+          }
+        });
+      }, { threshold: 0.25 });
+
+      counters.forEach(c => observer.observe(c));
+    }
+
+  </script>
+
+  <!-- BUSINESS LOGIC & MODALS -->
+  <script>
+
+
+    // ==========================================================================
+    // 2. LEAD NOTIFICATION & EMAIL DISPATCH (iamirhosseinenayati@gmail.com)
+    // ==========================================================================
+    const PLANETWHY_CONFIG = {
+      // ایمیل اصلی مدیریت جهت دریافت فوری تمامی ثبت‌نام‌ها
+      adminEmail: 'iamirhosseinenayati@gmail.com',
+      adminPhone: '09118702633',
+
+      // ۱. ارسال خودکار ایمیل بدون نیاز به سرور از طریق FormSubmit AJAX API
+      emailEndpoint: 'https://formsubmit.co/ajax/iamirhosseinenayati@gmail.com',
+
+      // ۲. وب‌هوک اختیاری برای Google Apps Script یا سرویس‌های اتوماسیون
+      webhookUrl: '',
+
+      // ۳. همگام‌سازی مستقیم با گوگل فرم (Google Forms)
+      googleForm: {
+        actionUrl: 'https://docs.google.com/forms/d/e/1FAIpQLSc-YOUR-FORM-ID-HERE/formResponse',
+        entryIds: {
+          name: 'entry.2005620554',   // کد فیلد نام
+          phone: 'entry.1166974658',  // کد فیلد شماره همراه
+          topic: 'entry.839337160'    // کد فیلد دوره انتخابی
+        }
+      }
+    };
+
+    let currentSelectedTopic = 'رزرو سریع دوره';
+    window.gformSubmitted = false;
+
+    function openPopModal(title) {
+      currentSelectedTopic = title || 'رزرو سریع دوره';
+      document.getElementById('modal-title').textContent = currentSelectedTopic;
+      document.getElementById('modal-topic-text').textContent = currentSelectedTopic;
+      
+      // Reset modal views
+      document.getElementById('pop-form-content').style.display = 'block';
+      document.getElementById('pop-success-content').style.display = 'none';
+      const btn = document.getElementById('pop-submit-btn');
+      if (btn) {
+        btn.disabled = false;
+        document.getElementById('pop-submit-text').style.display = 'inline';
+        document.getElementById('pop-submit-spinner').style.display = 'none';
+      }
+      
+      document.getElementById('pop-modal').classList.add('open');
+    }
+
+    function closePopModal() {
+      document.getElementById('pop-modal').classList.remove('open');
+    }
+
+    // Helper: Convert Persian/Arabic digits to English
+    function toEnglishDigits(str) {
+      return String(str)
+        .replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d))
+        .replace(/[٠-٩]/g, d => '٠١٢٣٤٥٦٧٨٩'.indexOf(d));
+    }
+
+    function showFormSuccessState() {
+      document.getElementById('pop-form-content').style.display = 'none';
+      document.getElementById('pop-success-content').style.display = 'block';
+    }
+
+    async function handlePopSubmit(e) {
+      e.preventDefault();
+
+      const rawName = document.getElementById('pop-input-name').value.trim();
+      const rawPhone = toEnglishDigits(document.getElementById('pop-input-phone').value.trim());
+
+      if (!rawName || !rawPhone) {
+        alert('لطفاً نام و شماره تماس خود را وارد نمایید.');
+        return;
+      }
+
+      const cleanPhone = rawPhone.replace(/[\s\-\+]/g, '');
+      if (cleanPhone.length < 10) {
+        alert('لطفاً یک شماره همراه معتبر (مثال: ۰۹۱۱...) وارد کنید.');
+        return;
+      }
+
+      // UI Loading State
+      const submitBtn = document.getElementById('pop-submit-btn');
+      submitBtn.disabled = true;
+      document.getElementById('pop-submit-text').style.display = 'none';
+      document.getElementById('pop-submit-spinner').style.display = 'inline';
+
+      const persianDate = new Date().toLocaleString('fa-IR', {
+        dateStyle: 'full',
+        timeStyle: 'medium',
+        timeZone: 'Asia/Tehran'
+      });
+
+      // 1. PERMANENT LOCAL BROWSER BACKUP (Ensures zero leads lost)
+      const leadPayload = {
+        name: rawName,
+        phone: cleanPhone,
+        topic: currentSelectedTopic,
+        date: persianDate,
+        recipient: PLANETWHY_CONFIG.adminEmail,
+        timestamp: Date.now()
+      };
+
+      try {
+        const stored = JSON.parse(localStorage.getItem('planetwhy_leads') || '[]');
+        stored.unshift(leadPayload);
+        localStorage.setItem('planetwhy_leads', JSON.stringify(stored));
+        console.log('✅ [PlanetWhy Lead Saved Locally]:', leadPayload);
+      } catch (err) {
+        console.warn('LocalStorage backup error:', err);
+      }
+
+      // 2. DISPATCH EMAIL & EXTERNAL SYNC IN PARALLEL
+      const dispatchTasks = [];
+
+      // A) Instant Email to iamirhosseinenayati@gmail.com
+      if (PLANETWHY_CONFIG.emailEndpoint) {
+        const emailTask = fetch(PLANETWHY_CONFIG.emailEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            'نام والد یا متقاضی': rawName,
+            'شماره تماس': cleanPhone,
+            'دوره یا هدف رزرو': currentSelectedTopic,
+            'زمان ثبت درخواست': persianDate,
+            'مرکز آموزشی': 'آکادمی پلنت وای (قائم‌شهر و ساری)',
+            'شماره تماس آکادمی': PLANETWHY_CONFIG.adminPhone,
+            '_subject': `🚀 ثبت‌نام جدید در پلنت وای: ${rawName} (${currentSelectedTopic})`,
+            '_template': 'table',
+            '_captcha': 'false'
+          })
+        }).then(res => res.json()).then(data => {
+          console.log('📧 [Email Notification Sent to iamirhosseinenayati@gmail.com]:', data);
+        }).catch(err => {
+          console.warn('Email dispatch notice:', err);
+        });
+
+        dispatchTasks.push(emailTask);
+      }
+
+      // B) Custom Webhook / Google Apps Script (if configured)
+      if (PLANETWHY_CONFIG.webhookUrl) {
+        const webhookTask = fetch(PLANETWHY_CONFIG.webhookUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(leadPayload)
+        }).catch(err => console.warn('Webhook dispatch notice:', err));
+
+        dispatchTasks.push(webhookTask);
+      }
+
+      // C) Direct Google Forms Sync (if configured)
+      const isGFormPlaceholder = PLANETWHY_CONFIG.googleForm.actionUrl.includes('YOUR-FORM-ID');
+      if (!isGFormPlaceholder) {
+        try {
+          const gData = new FormData();
+          if (PLANETWHY_CONFIG.googleForm.entryIds.name) gData.append(PLANETWHY_CONFIG.googleForm.entryIds.name, rawName);
+          if (PLANETWHY_CONFIG.googleForm.entryIds.phone) gData.append(PLANETWHY_CONFIG.googleForm.entryIds.phone, cleanPhone);
+          if (PLANETWHY_CONFIG.googleForm.entryIds.topic) gData.append(PLANETWHY_CONFIG.googleForm.entryIds.topic, currentSelectedTopic);
+
+          const gFormTask = fetch(PLANETWHY_CONFIG.googleForm.actionUrl, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: gData
+          }).catch(err => console.warn('Google Form notice:', err));
+
+          dispatchTasks.push(gFormTask);
+        } catch (e) {
+          console.warn('Google Form payload error:', e);
+        }
+      }
+
+      // Keep user experience fast with a max 2.2-second wait
+      const timeoutLimit = new Promise(resolve => setTimeout(resolve, 2200));
+
+      await Promise.race([
+        Promise.allSettled(dispatchTasks),
+        timeoutLimit
+      ]);
+
+      showFormSuccessState();
+    }
+
+    // DevTools utility for Amirhossein Enayati to view/export all leads anytime
+    window.getPlanetWhyLeads = function() {
+      const leads = JSON.parse(localStorage.getItem('planetwhy_leads') || '[]');
+      console.table(leads);
+      return leads;
+    };
+
+    // 3. SCIENTIFIC DATA LAB TABS CONTROLLER
+    function switchDataTab(tabName) {
+      document.querySelectorAll('.data-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.data-panel').forEach(panel => panel.classList.remove('active'));
+      const targetBtn = document.getElementById('tab-btn-' + tabName);
+      const targetPanel = document.getElementById('panel-' + tabName);
+      if (targetBtn) {
+        targetBtn.classList.add('active');
+        try {
+          targetBtn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        } catch(e) {}
+      }
+      if (targetPanel) targetPanel.classList.add('active');
+    }
+  </script>
+</body>
+</html>
