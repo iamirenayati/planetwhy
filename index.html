@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>پلنت وای | PLANETWHY AI — آکادمی ۳بعدی هوش مصنوعی کودکان و نوجوانان قائم‌شهر</title>
+  <link rel="icon" type="image/svg+xml" href="./images/favicon.svg" />
   <meta name="description" content="آکادمی هوش مصنوعی کودکان و نوجوانان پلنت وای در قائم‌شهر و مازندران | همراه با دنیای ۳بعدی تعاملی" />
 
   <style>
@@ -1653,79 +1654,53 @@
         display: none !important;
       }
 
-      /* Header: Centered Prominent Brand with Comfortable Touch Target */
+      /* Header: Clean Centered Luxury Brand Mark */
       header.karl-nav {
-        padding: 8px 12px 6px;
-        min-height: 56px;
+        padding: 10px 16px;
+        min-height: 54px;
       }
       .karl-nav-container {
-        position: relative;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         width: 100%;
         min-height: 46px;
       }
-      .nav-side-right {
-        display: flex !important;
-        visibility: hidden;
-        width: 50px;
-        min-width: 50px;
-        pointer-events: none;
-      }
-      .nav-side-left {
-        position: static;
-        transform: none;
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        width: auto;
-        z-index: 5;
-      }
       .brand-group {
         display: inline-flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
-        gap: 1px;
+        gap: 12px;
         margin: 0 auto;
-        text-align: center;
         text-decoration: none;
-        touch-action: manipulation;
-        flex: 1;
       }
-      .brand-badge {
-        font-size: 1.15rem;
-        padding: 5px 15px;
-        border-width: 2.5px;
-        box-shadow: 2px 2px 0px var(--color-charcoal-ink);
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        white-space: nowrap;
-      }
-      .brand-planet-icon {
-        font-size: 1.15rem;
-      }
-      .brand-name {
-        font-size: 0.72rem;
-        letter-spacing: 1.5px;
-        font-weight: 900;
-        opacity: 0.95;
-        display: inline-block !important;
-      }
-      .btn-nav-call {
-        min-height: 40px;
+      .brand-logo-wrap {
+        width: 44px;
+        height: 44px;
         min-width: 44px;
-        padding: 6px 12px;
-        font-size: 0.82rem;
-        gap: 5px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: var(--radius-pill);
-        touch-action: manipulation;
-        box-shadow: 2px 2px 0px var(--color-charcoal-ink);
+        min-height: 44px;
+        border-radius: 50%;
+        padding: 5px;
+        border: 2.5px solid var(--color-charcoal-ink);
+        box-shadow: 2.5px 2.5px 0px var(--color-charcoal-ink);
+      }
+      .brand-text-col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: right;
+      }
+      .brand-title-persian {
+        font-size: 1.36rem;
+        font-weight: 900;
+        line-height: 1.1;
+      }
+      .brand-title-en {
+        font-size: 0.70rem;
+        letter-spacing: 1.6px;
+        font-weight: 900;
+        color: var(--color-globe-azure);
       }
       .btn-nav-call .call-num-full {
         display: none !important;
@@ -2379,35 +2354,20 @@
 </head>
 <body>
 
-  <!-- TOP NAVIGATION -->
+  <!-- TOP NAVIGATION: MINIMALIST, PRESTIGIOUS & UNCLUTTERED -->
   <header class="karl-nav">
     <div class="karl-nav-container">
-      
-      <!-- Right: Action CTA (Desktop) -->
-      <div class="nav-side-right">
-        <button class="btn-nav-reserve hide-mobile" onclick="openPopModal('رزرو سریع دوره')">
-          <span>ثبت‌نام و مشاوره ✨</span>
-        </button>
-      </div>
-
-      <!-- Center: Distinct, Bold Centered Brand Logo -->
-      <a href="#" class="brand-group" aria-label="پلنت وای | صفحه اصلی">
-        <span class="brand-badge">
-          <span class="brand-planet-icon">🪐</span>
-          <span>پلنت وای</span>
-        </span>
-        <span class="brand-name">PLANETWHY AI</span>
+      <a href="#" class="brand-group" aria-label="پلنت وای | PLANETWHY AI">
+        <div class="brand-logo-wrap">
+          <img src="./images/planetwhy_logo.svg" alt="PlanetWhy Logo" width="48" height="48" />
+        </div>
+        <div class="brand-text-col">
+          <span class="brand-title-persian">
+            پلنت وای <span class="brand-spark">✨</span>
+          </span>
+          <span class="brand-title-en">PLANETWHY AI</span>
+        </div>
       </a>
-
-      <!-- Left: Direct Phone Call CTA -->
-      <div class="nav-side-left">
-        <a href="tel:09118702633" class="btn-nav-call">
-          <span>📞</span>
-          <span class="call-num-full">۰۹۱۱۸۷۰۲۶۳۳</span>
-          <span class="call-num-short">تماس</span>
-        </a>
-      </div>
-
     </div>
   </header>
 
