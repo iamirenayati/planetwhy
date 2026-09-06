@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Planet Globe -->
+  <circle cx="32" cy="32" r="21" fill="#007fff" stroke="#333333" stroke-width="3" />
+  <!-- Land Accent -->
+  <path d="M 28 17 C 35 18 40 23 37 28 C 33 32 27 28 25 22 Z" fill="#ffe600" stroke="#333333" stroke-width="2" />
+  <!-- Ring -->
+  <ellipse cx="32" cy="33" rx="27" ry="9" fill="none" stroke="#ef3b2c" stroke-width="4" stroke-linecap="round" transform="rotate(-22 32 33)" />
+  <!-- Mini Moon -->
+  <circle cx="50" cy="21" r="4.5" fill="#ffffff" stroke="#333333" stroke-width="2" />
+</svg>
